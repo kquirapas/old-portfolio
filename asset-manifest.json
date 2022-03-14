@@ -1,12 +1,16 @@
 {
   "files": {
-    "main.js": "/static/js/main.1381897b.js",
+    "main.js": "/static/js/main.9a028dc4.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/RobotoSlab-Black.ttf": "/static/media/RobotoSlab-Black.43ddeddbec9021b940de.ttf",
+    "static/media/RobotoSlab-Medium.ttf": "/static/media/RobotoSlab-Medium.61a2375ed504ea27a7eb.ttf",
+    "static/media/Fredoka-Medium.ttf": "/static/media/Fredoka-Medium.57d2822992b7b04d1b0f.ttf",
+    "static/media/Fredoka-Bold.ttf": "/static/media/Fredoka-Bold.69c8f5aa213c5499fcf6.ttf",
     "index.html": "/index.html",
-    "main.1381897b.js.map": "/static/js/main.1381897b.js.map",
+    "main.9a028dc4.js.map": "/static/js/main.9a028dc4.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.1381897b.js"
+    "static/js/main.9a028dc4.js"
   ]
 }
