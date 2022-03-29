@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.d09ebd3d.js",
-    "static/js/787.2db34af1.chunk.js": "/static/js/787.2db34af1.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.js": "/static/js/main.22d3167f.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/RobotoSlab-Black.ttf": "/static/media/RobotoSlab-Black.43ddeddbec9021b940de.ttf",
+    "static/media/RobotoSlab-Medium.ttf": "/static/media/RobotoSlab-Medium.61a2375ed504ea27a7eb.ttf",
+    "static/media/Fredoka-Medium.ttf": "/static/media/Fredoka-Medium.57d2822992b7b04d1b0f.ttf",
+    "static/media/Fredoka-Bold.ttf": "/static/media/Fredoka-Bold.69c8f5aa213c5499fcf6.ttf",
     "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.d09ebd3d.js.map": "/static/js/main.d09ebd3d.js.map",
-    "787.2db34af1.chunk.js.map": "/static/js/787.2db34af1.chunk.js.map"
+    "main.22d3167f.js.map": "/static/js/main.22d3167f.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.d09ebd3d.js"
+    "static/js/main.22d3167f.js"
   ]
 }
