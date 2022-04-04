@@ -26,7 +26,6 @@ export default function Projects() {
         <StyledBody>
           <StyledHeader ref={headerRef}>
             <h1 className="page-header">Projects</h1>
-            <p className="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt mi imperdiet tellus semper, sit amet sodales est facilisis. Fusce nec finibus arcu, eget congue odio. Aliquam purus nunc, venenatis sit amet est sed, egestas convallis turpis. Nulla elementum, libero nec consequat iaculis, mauris felis varius augue, iaculis sagittis ipsum turpis eu tortor. Vestibulum vitae massa a metus mollis faucibus. Integer vitae ultricies sem. Sed laoreet arcu in elit molestie, tincidunt tempus nulla tincidunt. Nulla risus magna, tincidunt ut vestibulum a, rhoncus et mi. Vivamus pretium posuere iaculis. Vestibulum in tellus volutpat tellus efficitur eleifend.</p>
           </StyledHeader>
           {
             pIdx.map(i => {
