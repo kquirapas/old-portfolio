@@ -1,6 +1,37 @@
 import styled from 'styled-components';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
+function Arrow() {
+  return (
+    <StyledDiv><span>{'>>>>>'}</span></StyledDiv>
+  );
+}
+
+const StyledDiv = styled.div`
+  opacity: 0.05;
+  z-index: -5;
+  margin: 0;
+  padding: 0;
+  color: ${GREEN};
+  font-family: Lato Black;
+  font-size: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  align-self: end;
+
+  span {
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+
 export default function Workflow() {
   return (
       <StyledSection>
@@ -13,6 +44,7 @@ export default function Workflow() {
             <StyledNum className="section-header"><p>0</p></StyledNum>
             <span className="nav-main-link font-white">Research and Experiment</span>
             <StyledP className="body-text">I plan the project and test the technology stack. I make all the mistakes at this stage, so I can avoid them when I start coding.</StyledP>
+            <Arrow />
           </StyledAside>
           <StyledAside>
             <StyledNum className="section-header"><p>1</p></StyledNum>
@@ -46,7 +78,8 @@ const StyledHeader = styled.div`
 `;
 
 const StyledSection = styled.section`
-  padding: 10vh 10vw;
+  position: relative;
+  padding: 10vh 0;
 `;
 
 const StyledGrid = styled.div`

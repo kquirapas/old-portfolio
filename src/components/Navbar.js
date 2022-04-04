@@ -15,10 +15,8 @@ const StyledNavLinkText = styled.span`
   color: ${WHITE};
 `;
 
-export default function Navbar({ page, setNavH, headerRef }) {
+export default function Navbar({ page, headerRef }) {
   const navbar = useRef(null);
-  const [isNavTrans, setIsNavTrans] = useState(true);
-
 
   function getNavLink(text) {
     if (text.toLowerCase() !== page.toLowerCase()) {
@@ -41,15 +39,14 @@ export default function Navbar({ page, setNavH, headerRef }) {
   }
 
   const onScroll = () => {
-    const headerRect = headerRef.current.getBoundingClientRect();
-    console.log(headerRect);
-    console.log(headerRect.y);
-    console.log(Math.round(headerRect.top));
+    if (headerRef.current) {
+      const headerRect = headerRef.current.getBoundingClientRect();
 
-    if (Math.round(headerRect.top) < -100) {
-      navbar.current.classList.add('nav-opaque');
-    } else {
-      navbar.current.classList.remove('nav-opaque');
+      if (Math.round(headerRect.top) < -100) {
+        navbar.current.classList.add('nav-opaque');
+      } else {
+        navbar.current.classList.remove('nav-opaque');
+      }
     }
   };
 
@@ -62,8 +59,6 @@ export default function Navbar({ page, setNavH, headerRef }) {
       navbar.current.classList.remove('nav-opaque');
     }
 
-    setNavH(navbar.current.clientHeight);
-
     window.addEventListener('scroll', onScroll);
 
     return () => {
@@ -74,7 +69,7 @@ export default function Navbar({ page, setNavH, headerRef }) {
   return (
     <>
       <GlobalStyle />
-      <StyledNav className="nav-transparent" transparency={isNavTrans} ref={navbar}>
+      <StyledNav className="nav-transparent" ref={navbar}>
         <StyledLogoLink to="/">
           <StyledLogo>
           </StyledLogo>
@@ -85,6 +80,7 @@ export default function Navbar({ page, setNavH, headerRef }) {
         </StyledLogoLink>
         <StyledDiv2>
           <StyledNavLink to="/projects" className="nav-main-link">{ getNavLink("Projects") }</StyledNavLink>
+          <StyledNavLink to="/experiments" className="nav-main-link">{ getNavLink("Experiments") }</StyledNavLink>
           <StyledNavLink to="/contacts" className="nav-main-link">{ getNavLink("Contacts") }</StyledNavLink>
           <StyledNavLink to="/about" className="nav-main-link">{ getNavLink("About") }</StyledNavLink>
         </StyledDiv2>

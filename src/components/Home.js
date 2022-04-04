@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import DevStack from './DevStack';
@@ -13,7 +14,6 @@ const NUM_PROJ_TO_SHOW = 2;
 
 export default function Home() {
   const headerRef = useRef(null);
-  const [navHeight, setNavHeight] = useState(0);
 
   useEffect(() => {
     document.title = 'Kristian Quirapas';
@@ -24,8 +24,8 @@ export default function Home() {
 
   return (
     <>
-      <Navbar page={"Home"} setNavH={setNavHeight} headerRef={headerRef} />
-      <StyledHeader ref={headerRef} top={-navHeight}>
+      <Navbar page={"Home"} headerRef={headerRef} />
+      <StyledHeader ref={headerRef}>
         <StyledGradient>
           <StyledAside>
             <span className='page-header font-green'>Blockchain</span>
@@ -40,44 +40,58 @@ export default function Home() {
             <StyledGroup>
               <p className='body-text'>Formal projects deepen my expertise, but personal projects widen my horizon. Here, have a look</p>
               <span>
-                <StyledLink className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>Explore My Experiments</StyledLink>
+                <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>Explore My Experiments</StyledLink>
               </span>
             </StyledGroup>
           </StyledAside>
         </StyledGradient>
       </StyledHeader>
 
-      <Workflow />
-      <DevStack />
+      <StyledPage>
+        <StyledBody>
+          <Workflow />
+          <DevStack />
 
-      <StyledSection>
-        <StyledSectionHeader>
-            <div>
-              <StyledSectionName className="section-header">Projects</StyledSectionName>
-              <StyledSecondary className="secondary-text">How I Solve Problems</StyledSecondary>
-            </div>
-            <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>More Projects</StyledLink>
-        </StyledSectionHeader>
-        <StyledSectionBody>
-          {
-            pIdx.slice(0,NUM_PROJ_TO_SHOW).map( i => {
-              return (
-                <StyledProjHolder key={i} >
-                  <ProjectPrev key={i} link={`/projects/${projects[i].name}`} details={projects[i].year + ' - ' + projects[i].network} title={projects[i].name} description={projects[i].description}/>
-                </StyledProjHolder>
-              )
-            })
-          }
-        </StyledSectionBody>
-      </StyledSection>
-
+          <StyledSection>
+            <StyledSectionHeader>
+                <div>
+                  <StyledSectionName className="section-header">Projects</StyledSectionName>
+                  <StyledSecondary className="secondary-text">How I Solve Problems</StyledSecondary>
+                </div>
+                <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>More Projects</StyledLink>
+            </StyledSectionHeader>
+            <StyledSectionBody>
+              {
+                pIdx.slice(0,NUM_PROJ_TO_SHOW).map( i => {
+                  return (
+                    <StyledProjHolder key={i} >
+                      <ProjectPrev key={i} link={`/projects/${i}`} details={projects[i].year + ' - ' + projects[i].network} title={projects[i].name} description={projects[i].description}/>
+                    </StyledProjHolder>
+                  )
+                })
+              }
+            </StyledSectionBody>
+          </StyledSection>
+        </StyledBody>
+      </StyledPage>
       <Footer />
     </>
   );
 }
 
+const StyledPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+`;
+
+const StyledBody = styled.main`
+  width: 80vw;
+`;
+
 const StyledSection = styled.section`
-  padding: 10vh 10vw;
+  padding: 10vh 0;
 `;
 
 const StyledHeader = styled.header` 
@@ -85,7 +99,6 @@ const StyledHeader = styled.header`
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
-  top: ${props => props.top}px;
   background-image: url(/assets/portfolio-picture.png);
   background-position: center;
   background-size: cover;
@@ -135,7 +148,8 @@ const StyledSecondary = styled.span`
   margin: 0.5vh 0 4vh 0;
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
+  text-decoration: none;
   color: ${WHITE};
   margin-right: 20px;
 

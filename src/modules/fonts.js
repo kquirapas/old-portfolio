@@ -4,9 +4,15 @@ import { createGlobalStyle } from 'styled-components';
 import LatoBlack from '../fonts/Lato/Lato-Black.ttf';
 import LatoRegular from '../fonts/Lato/Lato-Regular.ttf';
 import LatoBold from '../fonts/Lato/Lato-Bold.ttf';
+import RobotoMonoRegular from '../fonts/RobotoMono/RobotoMono-Regular.ttf';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
 export default createGlobalStyle`
+  @font-face {
+    font-family: 'RobotoMono Regular';
+    src: url(${RobotoMonoRegular}) format('truetype');
+  }
+
   @font-face {
     font-family: 'Lato Black';
     src: url(${LatoBlack}) format('truetype');
@@ -43,7 +49,7 @@ export default createGlobalStyle`
   .body-text {
     line-height: 140%;
     font-family: Lato Regular;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .secondary-text {

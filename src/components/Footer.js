@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { projects, pIdx } from '../content/projects';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
+
+const NUM_PROJ_TO_SHOW = 4;
 
 export default function Footer() {
   return (
@@ -22,7 +25,13 @@ export default function Footer() {
             <StyledColumn>
               <StyledColumnHead to="/" className="footer-header">Projects</StyledColumnHead>
               <StyledColumnBody>
-                <StyledColumnLink className="footer-link" to="/"><StyledColumnLinkText>hotdog@gmail.com</StyledColumnLinkText></StyledColumnLink>
+                {
+                  pIdx.slice(0,NUM_PROJ_TO_SHOW).map(i => {
+                    return (
+                      <StyledColumnLink key={i} className="footer-link" to={`/projects/${i}`}><StyledColumnLinkText>{ projects[i].name }</StyledColumnLinkText></StyledColumnLink>
+                    )
+                  })
+                }
               </StyledColumnBody>
             </StyledColumn>
             <StyledColumn>

@@ -10,7 +10,7 @@ import Footer from './Footer';
 
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
-export default function ProjContent() {
+export default function ExpContent() {
   const headerRef = useRef(null);
   const { idx } = useParams();
 
@@ -25,7 +25,7 @@ export default function ProjContent() {
 
   return (
     <>
-      <Navbar page={"Projects"} headerRef={headerRef} />
+      <Navbar page={"Experiments"} headerRef={headerRef} />
       <StyledPage>
         <StyledBody>
           <StyledHeader ref={headerRef}>
@@ -91,6 +91,8 @@ const StyledLess = styled.span`
 `;
 
 const StyledMarkdown = styled.main`
+  width: 100%;
+
   img {
     width: 100%;
     overflow: hidden;
@@ -132,17 +134,7 @@ const StyledMarkdown = styled.main`
   }
 
   code {
-    max-height: 100vh;
-    overflow: scroll;
-    box-sizing: border-box;
-    border: 1px solid ${GREEN};
-    border-left: 2vw solid ${GREEN};
-    display: block;
-    padding: 3vh 1vw;
-    margin: 2vh 0;
-    font-family: RobotoMono Regular;
-    font-size: 20px;
-    background-color: ${BLUE};
-    color: ${BROWN};
+    background-color: red;
+    color: green;
   }
 `;

@@ -1,46 +1,65 @@
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import ReactMarkdown from 'react-markdown';
+import { Link } from 'react-router-dom';
 
-const post = ` 
-# Hello world
-## hotdog
+import { projects, pIdx } from '../content/projects';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
-testing react markdown fo life
-
-- does this work?
-  - does this work?
-
-- does this work?
-
-- does this work?
-
-> does this work?
-
-> does this work?
-
-![test image](/assets/portfolio-picture.png)
-
-
-\`\`\`
-#include <stdio.h>
-
-int main() {
-	printf("Hello, World!");
-	return 0;
-}
-\`\`\`
-`;
+import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
 export default function Contacts() {
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    document.title = 'Kristian Quirapas';
+    document.body.style.margin = 0;
+    document.body.style.backgroundColor = BLUE;
+    document.body.style.color = BROWN;
+  }, []);
+
   return (
-    <StyledMarkdown>
-      <ReactMarkdown>{ post }</ReactMarkdown>
-    </StyledMarkdown>
+    <>
+      <Navbar page={"Contacts"} headerRef={headerRef} />
+      <StyledPage>
+        <StyledBody>
+          <StyledHeader ref={headerRef}>
+          </StyledHeader>
+        </StyledBody>
+      </StyledPage>
+      <Footer />
+    </>
   );
 }
 
+const StyledPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+`;
 
-const StyledMarkdown = styled.main`
-  h1, li {
+const StyledBody = styled.div`
+  width: 50vw;
+`;
+
+const StyledHeader = styled.header`
+  margin-bottom: 10vh;
+  width: 100%;
+
+  color: ${BROWN};
+
+  h1 {
+    color: ${WHITE};
+  }
+
+  h2 {
+    margin: 0;
+    color: ${GREEN};
+  }
+
+  span {
+    color: ${WHITE};
   }
 `;
+;

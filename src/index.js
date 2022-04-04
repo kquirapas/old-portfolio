@@ -6,8 +6,11 @@ import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
 import ProjContent from './components/ProjContent';
+import Experiments from './components/Experiments';
+import ExpContent from './components/ExpContent';
 import Contacts from './components/Contacts';
 import reportWebVitals from './reportWebVitals';
+import GoToTop from './components/GoToTop';
 
 import Navbar from './components/Navbar';
 import Fonts from './modules/fonts';
@@ -16,10 +19,13 @@ ReactDOM.render(
   <React.StrictMode>
     <Fonts />
     <BrowserRouter>
+      <GoToTop />
       <Routes>
         <Route exact path="/" element={<Home />}/>
         <Route exact path="/projects" element={<Projects />}/>
-        <Route exact path="/projects/:name" element={<ProjContent />}/>
+        <Route exact path="/projects/:idx" element={<ProjContent />}/>
+        <Route exact path="/experiments" element={<Experiments />}/>
+        <Route exact path="/experiments/:idx" element={<ExpContent />}/>
         <Route exact path="/about" element={<About />}/>
         <Route exact path="/contacts" element={<Contacts />}/>
       </Routes>

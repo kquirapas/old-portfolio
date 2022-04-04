@@ -8,7 +8,7 @@ import Footer from './Footer';
 
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
-export default function About() {
+export default function Experiments() {
   const headerRef = useRef(null);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function About() {
 
   return (
     <>
-      <Navbar page={"About"} headerRef={headerRef} />
+      <Navbar page={"Experiments"} headerRef={headerRef} />
       <StyledPage>
         <StyledBody>
           <StyledHeader ref={headerRef}>

@@ -15,7 +15,7 @@ export default function() {
 }
 
 const StyledSection = styled.section`
-  padding: 10vh 10vw;
+  padding: 10vh 0;
   display: grid;
   grid-template-columns: 1fr 2fr;
 `
@@ -37,6 +37,6 @@ const StyledIMG = styled.img`
 `;
 
 const StyledP = styled.p`
-  padding: 0 20px;
+  padding: 0 5vw;
   text-align: center;
 `;
