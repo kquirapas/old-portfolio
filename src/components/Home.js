@@ -7,6 +7,7 @@ import DevStack from './DevStack';
 import Workflow from './Workflow';
 import ProjectPrev from './ProjectPrev';
 import { pIdx, projects } from '../content/projects';
+import { eIdx, experiments } from '../content/projects';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
 
@@ -24,7 +25,6 @@ export default function Home() {
 
   return (
     <>
-      <Navbar page={"Home"} headerRef={headerRef} />
       <StyledHeader ref={headerRef}>
         <StyledGradient>
           <StyledAside>
@@ -46,6 +46,8 @@ export default function Home() {
           </StyledAside>
         </StyledGradient>
       </StyledHeader>
+
+      <Navbar page={"Home"} headerRef={headerRef} />
 
       <StyledPage>
         <StyledBody>
@@ -72,6 +74,28 @@ export default function Home() {
               }
             </StyledSectionBody>
           </StyledSection>
+
+          <StyledSection>
+            <StyledSectionHeader>
+                <div>
+                  <StyledSectionName className="section-header">Experiments</StyledSectionName>
+                  <StyledSecondary className="secondary-text">How I Solve Problems</StyledSecondary>
+                </div>
+                <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>More Experiments</StyledLink>
+            </StyledSectionHeader>
+            <StyledSectionBody>
+              {
+                pIdx.slice(0,NUM_PROJ_TO_SHOW).map( i => {
+                  return (
+                    <StyledProjHolder key={i} >
+                      <ProjectPrev key={i} link={`/experiments/${i}`} details={projects[i].year + ' - ' + projects[i].network} title={projects[i].name} description={projects[i].description}/>
+                    </StyledProjHolder>
+                  )
+                })
+              }
+            </StyledSectionBody>
+          </StyledSection>
+
         </StyledBody>
       </StyledPage>
       <Footer />
@@ -138,6 +162,7 @@ const StyledSectionBody = styled.div`
 `;
 
 const StyledProjHolder = styled.div`
+  border-radius: 20px;
   overflow: hidden;
   min-height: 40vh;
   max-height: 60vh;

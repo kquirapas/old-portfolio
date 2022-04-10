@@ -93,20 +93,21 @@ const GlobalStyle = createGlobalStyle`
   .nav-opaque {
     background-color: ${BLUE};
     border-bottom: 1px solid ${GREEN};
-    padding: 1.5vh 3vw;
   }
 `;
 
 const StyledNav = styled.nav`
   z-index: 999;
-  position: sticky;
+  width: 100vw;
+  position: fixed;
   top: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 4vh 3vw;
+  padding: 2vh 1vw;
+  box-sizing: border-box;
 
-  transition: border 0.5s, background-color 0.5s, padding 0.5s;
+  transition: border 0.5s, background-color 0.5s;
   transition-timing-function: ease-in-out;
 `;
 
