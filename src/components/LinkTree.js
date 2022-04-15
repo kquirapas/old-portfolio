@@ -7,7 +7,7 @@ function App({ children }) {
     <Main>
       <H1 className="section-header">Kristian Quirapas</H1>
       <span className="secondary-text">Blockchain Developer</span>
-      <P className="body-text">You can visit these links while I work on my website portfolio</P>
+      <P className="body-text">Hey, my name's K. I'm a software engineer who builds web-based blockchain applications</P>
       <A href="https://linkedin.com/in/kristian-quirapas-348603213" target="_blank" className="nav-main-link">LinkedIn</A>
       <A href="https://twitter.com/k_quirapas" target="_blank" className="nav-main-link">Twitter</A>
       <A href="https://www.youtube.com/channel/UCaU88FuhkVKO0PJViRjvTLw" target="_blank" className="nav-main-link">Youtube</A>
@@ -35,6 +35,7 @@ const H1 = styled.h1`
 `;
 
 const P = styled.p`
+  max-width: 500px;
   color: ${BROWN};
   text-align: center;
   margin: 1vh 0;
@@ -51,7 +52,7 @@ const A = styled.a`
   border-radius: 10px;
   transition: background 0.1s;
 
-  &:hover {
+  &:hover, &:active {
     background-color: ${GREEN};
   }
 `;
