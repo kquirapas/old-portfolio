@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
 function App({ children }) {
+  document.title = "Kristian Quirapas"
   document.body.style.margin = 0;
   return (
     <Main>
