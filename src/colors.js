@@ -1,4 +1,4 @@
-export const BLUE = "#116466";
-export const BROWN = "#ffffff";
-export const WHITE = "#d1e8e2";
-export const GREEN = "#116466";
+export const BLUE = "#0C1C2C";
+export const BROWN = "#AAA294";
+export const WHITE = "#FFFFFF";
+export const GREEN = "#5AAB93";
