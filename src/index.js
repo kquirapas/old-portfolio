@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './components/App';
+import LinkTree from './components/LinkTree';
 import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -15,21 +16,29 @@ import GoToTop from './components/GoToTop';
 import Navbar from './components/Navbar';
 import Fonts from './modules/fonts';
 
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Fonts />
+//     <BrowserRouter>
+//       <GoToTop />
+//       <Routes>
+//         <Route exact path="/" element={<Home />}/>
+//         <Route exact path="/projects" element={<Projects />}/>
+//         <Route exact path="/projects/:idx" element={<ProjContent />}/>
+//         <Route exact path="/experiments" element={<Experiments />}/>
+//         <Route exact path="/experiments/:idx" element={<ExpContent />}/>
+//         <Route exact path="/about" element={<About />}/>
+//         <Route exact path="/contacts" element={<Contacts />}/>
+//       </Routes>
+//     </BrowserRouter>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+
 ReactDOM.render(
   <React.StrictMode>
     <Fonts />
-    <BrowserRouter>
-      <GoToTop />
-      <Routes>
-        <Route exact path="/" element={<Home />}/>
-        <Route exact path="/projects" element={<Projects />}/>
-        <Route exact path="/projects/:idx" element={<ProjContent />}/>
-        <Route exact path="/experiments" element={<Experiments />}/>
-        <Route exact path="/experiments/:idx" element={<ExpContent />}/>
-        <Route exact path="/about" element={<About />}/>
-        <Route exact path="/contacts" element={<Contacts />}/>
-      </Routes>
-    </BrowserRouter>
+    <LinkTree />
   </React.StrictMode>,
   document.getElementById('root')
 );
