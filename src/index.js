@@ -16,32 +16,32 @@ import GoToTop from './components/GoToTop';
 import Navbar from './components/Navbar';
 import Fonts from './modules/fonts';
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Fonts />
-//     <BrowserRouter>
-//       <GoToTop />
-//       <Routes>
-//         <Route exact path="/" element={<Home />}/>
-//         <Route exact path="/projects" element={<Projects />}/>
-//         <Route exact path="/projects/:idx" element={<ProjContent />}/>
-//         <Route exact path="/experiments" element={<Experiments />}/>
-//         <Route exact path="/experiments/:idx" element={<ExpContent />}/>
-//         <Route exact path="/about" element={<About />}/>
-//         <Route exact path="/contacts" element={<Contacts />}/>
-//       </Routes>
-//     </BrowserRouter>
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
 ReactDOM.render(
   <React.StrictMode>
     <Fonts />
-    <LinkTree />
+    <BrowserRouter>
+      <GoToTop />
+      <Routes>
+        <Route exact path="/" element={<Home />}/>
+        <Route exact path="/projects" element={<Projects />}/>
+        <Route exact path="/projects/:idx" element={<ProjContent />}/>
+        <Route exact path="/experiments" element={<Experiments />}/>
+        <Route exact path="/experiments/:idx" element={<ExpContent />}/>
+        <Route exact path="/about" element={<About />}/>
+        <Route exact path="/contacts" element={<Contacts />}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Fonts />
+//     <LinkTree />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -32,6 +32,14 @@ export default createGlobalStyle`
     color: ${GREEN};
   }
 
+  .font-blue {
+    color: ${BLUE};
+  }
+
+  .font-brown {
+    color: ${BROWN};
+  }
+
   .font-white {
     color: ${WHITE};
   }

@@ -41,20 +41,55 @@ export default function Workflow() {
         </StyledHeader>
         <StyledGrid>
           <StyledAside>
-            <StyledNum className="section-header"><p>0</p></StyledNum>
-            <span className="nav-main-link font-white">Research and Experiment</span>
-            <StyledP className="body-text">I plan the project and test the technology stack. I make all the mistakes at this stage, so I can avoid them when I start coding.</StyledP>
+            <span className="nav-main-link font-white">Planning</span>
+            <StyledLogo>
+              <img src="/assets/icons/notion.svg" alt="Notion Logo" />
+              <img src="/assets/icons/figma.svg" alt="Figma Logo" />
+              <img src="/assets/icons/photoshop.svg" alt="Photoshop Logo" />
+            </StyledLogo>
             <Arrow />
           </StyledAside>
           <StyledAside>
-            <StyledNum className="section-header"><p>1</p></StyledNum>
-            <span className="nav-main-link font-white">Coding and Testing</span>
-            <StyledP className="body-text">I start working on the project, while testing along the way. I also do a bit of research at this stage as I encounter different problems.</StyledP>
-          </StyledAside>
-          <StyledAside>
-            <StyledNum className="section-header"><p>2</p></StyledNum>
-            <span className="nav-main-link font-white">Deployment and Maintenance</span>
-            <StyledP className="body-text">I deploy the project and keep an eye out for its performance in production. This is a fulfilling stage, but it takes a lot of work before getting here.</StyledP>
+            <span className="nav-main-link font-white">Project Setup</span>
+            <StyledLogo>
+              <img src="/assets/icons/linux.svg" alt="Linux Logo" />
+              <img src="/assets/icons/terminal.svg" alt="Terminal Logo" />
+              <img src="/assets/icons/npm.svg" alt="npm Logo" />
+              <img src="/assets/icons/yarn.svg" alt="yarn Logo" />
+              <img src="/assets/icons/metamask.svg" alt="MetaMask Logo" />
+              <img src="/assets/icons/ethereum.svg" alt="Ethereum Logo" />
+              <img src="/assets/icons/polygon.svg" alt="Polygon Logo" />
+              <img src="/assets/icons/hardhat.svg" alt="Hardhat Logo" />
+            </StyledLogo>
+            <Arrow />
+          </StyledAside><StyledAside>
+            <span className="nav-main-link font-white">Coding</span>
+            <StyledLogo>
+              <img src="/assets/icons/html.svg" alt="HTML Logo" />
+              <img src="/assets/icons/css.svg" alt="CSS Logo" />
+              <img src="/assets/icons/javascript.svg" alt="Javascript Logo" />
+              <img src="/assets/icons/solidity.svg" alt="Solidity Logo" />
+              <img src="/assets/icons/reactjs.svg" alt="ReactJS Logo" />
+              <img src="/assets/icons/nextjs.svg" alt="NextJS Logo" />
+              <img src="/assets/icons/vim.svg" alt="Vim Logo" />
+              <img src="/assets/icons/git.svg" alt="git Logo" />
+            </StyledLogo>
+            <Arrow />
+          </StyledAside><StyledAside>
+            <span className="nav-main-link font-white">Testing</span>
+            <StyledLogo>
+              <img src="/assets/icons/waffle.svg" alt="Waffle Logo " />
+              <img src="/assets/icons/mocha.svg" alt="Mocha Logo" />
+            </StyledLogo>
+            <Arrow />
+          </StyledAside><StyledAside>
+            <span className="nav-main-link font-white">Deployment</span>
+            <StyledLogo>
+              <img src="/assets/icons/github.svg" alt="Github Logo" />
+              <img src="/assets/icons/vercel.svg" alt="Vercel Logo" />
+              <img src="/assets/icons/alchemy.svg" alt="Alchemy Logo" />
+            </StyledLogo>
+            <Arrow />
           </StyledAside>
         </StyledGrid>
       </StyledSection>
@@ -65,7 +100,7 @@ const StyledHeader = styled.div`
   text-align: center;
   
 
-  h1 {
+h1 {
     margin: 0;
     color: ${GREEN};
   }
@@ -84,7 +119,7 @@ const StyledSection = styled.section`
 
 const StyledGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 `
 
 const StyledAside = styled.aside`
@@ -92,6 +127,26 @@ const StyledAside = styled.aside`
   flex-direction: column;
   align-items: center;
   text-align: center;
+`;
+
+const StyledLogo = styled.span`
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  img {
+    margin: 20px;
+    display: block;
+    height: 5vh;
+    transition: transform 0.2s;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+      transform: translateY(-10px) scale(1.1);
+    }
+  }
 `;
 
 const StyledNum = styled.span`

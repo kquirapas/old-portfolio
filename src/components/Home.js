@@ -30,6 +30,12 @@ export default function Home() {
           <StyledAside>
             <span className='page-header font-green'>Blockchain</span>
             <span className='page-header font-green'>Developer</span>
+            <StyledSocials>
+              <a href="https://linkedin.com/in/kristian-quirapas-348603213"><img src="/assets/icons/linkedin.svg" alt="LinkedIn Icon" /></a>
+              <a href="https://github.com/kquirapas"><img src="/assets/icons/github.svg" alt="Github Icon" /></a>
+              <a href="https://twitter.com/k_quirapas"><img src="/assets/icons/twitter.svg" alt="Twitter Icon" /></a>
+              <a href="https://www.youtube.com/channel/UCaU88FuhkVKO0PJViRjvTLw"><img src="/assets/icons/youtube.svg" alt="Youtube Icon" /></a>
+            </StyledSocials>
             <StyledGroup>
               <p className='body-text'>If you're interested to know more, then let me save you some time by giving you these links.</p>
               <span>
@@ -51,8 +57,8 @@ export default function Home() {
 
       <StyledPage>
         <StyledBody>
-          <Workflow />
           <DevStack />
+          <Workflow />
 
           <StyledSection>
             <StyledSectionHeader>
@@ -134,6 +140,25 @@ const StyledGradient = styled.div`
   width: 100vw;
   height: 100vh;
   background: linear-gradient(to top, rgba(12,28,44,1) 2%, rgba(12,28,44,0) 36%);
+`;
+
+const StyledSocials = styled.span`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+
+  img {
+    display: block;
+    width: 30px;
+    margin: 1vw 0.5vw;
+    filter: invert(97%) sepia(22%) saturate(34%) hue-rotate(85deg) brightness(117%) contrast(107%);
+    transition: transform 0.2s;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+      transform: translateY(-10px) scale(1.1);
+    }
+  }
 `;
 
 const StyledAside = styled.aside`
