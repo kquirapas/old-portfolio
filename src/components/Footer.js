@@ -20,7 +20,11 @@ export default function Footer() {
             <StyledColumn>
               <StyledColumnHead to="/" className="footer-header">Contacts</StyledColumnHead>
               <StyledColumnBody>
-                <StyledColumnLink className="footer-link" to="/"><StyledColumnLinkText>hotdog@gmail.com</StyledColumnLinkText></StyledColumnLink>
+                <StyledColumnA className="footer-link" href="mailto:kmquirapas@gmail.com"><StyledColumnLinkText>kmquirapas@gmail.com</StyledColumnLinkText></StyledColumnA>
+                <StyledColumnA className="footer-link" href="https://linkedin.com/in/kristian-quirapas-348603213"><StyledColumnLinkText>LinkedIn Profile</StyledColumnLinkText></StyledColumnA>
+                <StyledColumnA className="footer-link" href="https://github.com/kquirapas"><StyledColumnLinkText>Github</StyledColumnLinkText></StyledColumnA>
+                <StyledColumnA className="footer-link" href="https://www.youtube.com/channel/UCaU88FuhkVKO0PJViRjvTLw"><StyledColumnLinkText>Youtube Channel</StyledColumnLinkText></StyledColumnA>
+                <StyledColumnA className="footer-link" href="https://twitter.com/k_quirapas"><StyledColumnLinkText>Twitter</StyledColumnLinkText></StyledColumnA>
               </StyledColumnBody>
             </StyledColumn>
             <StyledColumn>
@@ -50,7 +54,7 @@ export default function Footer() {
             <StyledColumn>
               <StyledColumnHead to="/" className="footer-header">About</StyledColumnHead>
               <StyledColumnBody>
-                <StyledColumnLink className="footer-link" to="/"><StyledColumnLinkText>hotdog@gmail.com</StyledColumnLinkText></StyledColumnLink>
+                <StyledColumnLink className="footer-link" to="/about"><StyledColumnLinkText>Get my Resume</StyledColumnLinkText></StyledColumnLink>
               </StyledColumnBody>
             </StyledColumn>
           </StyledGrid>
@@ -120,6 +124,17 @@ const StyledColumnLinkText = styled.p`
   margin: 0;
   transition: transform 0.1s;
 `;
+
+const StyledColumnA = styled.a`
+  text-decoration: none;
+  color: ${WHITE};
+
+  &:hover ${StyledColumnLinkText} {
+    transform: translateY(-5px);
+    color: ${GREEN};
+  }
+`;
+
 
 const StyledColumnLink = styled(Link)`
   text-decoration: none;

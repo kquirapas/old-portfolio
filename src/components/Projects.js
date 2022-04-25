@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { projects, pIdx } from '../content/projects';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import ProjectPrev from './ProjectPrev';
 
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
@@ -166,6 +165,7 @@ const StyledProject = styled.aside`
 
   img {
     width: 100%;
+    height: 100%;
   }
 
   div.gradient-div-right {

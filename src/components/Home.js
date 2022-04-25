@@ -73,7 +73,7 @@ export default function Home() {
                 pIdx.slice(0,NUM_PROJ_TO_SHOW).map( i => {
                   return (
                     <StyledProjHolder key={i} >
-                      <ProjectPrev key={i} link={`/projects/${i}`} details={projects[i].year + ' - ' + projects[i].network} title={projects[i].name} description={projects[i].description}/>
+                      <ProjectPrev key={i} link={`/projects/${i}`} details={projects[i].year + ' - ' + projects[i].network} title={projects[i].name} description={projects[i].description} thumbnail={projects[i].thumbnail} />
                     </StyledProjHolder>
                   )
                 })
@@ -85,7 +85,7 @@ export default function Home() {
             <StyledSectionHeader>
                 <div>
                   <StyledSectionName className="section-header">Experiments</StyledSectionName>
-                  <StyledSecondary className="secondary-text">How I Solve Problems</StyledSecondary>
+                  <StyledSecondary className="secondary-text">How I Stay Creative</StyledSecondary>
                 </div>
                 <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>More Experiments</StyledLink>
             </StyledSectionHeader>
@@ -94,7 +94,7 @@ export default function Home() {
                 pIdx.slice(0,NUM_PROJ_TO_SHOW).map( i => {
                   return (
                     <StyledProjHolder key={i} >
-                      <ProjectPrev key={i} link={`/experiments/${i}`} details={projects[i].year + ' - ' + projects[i].network} title={projects[i].name} description={projects[i].description}/>
+                      <ProjectPrev key={i} link={`/experiments/${i}`} details={projects[i].year + ' - ' + projects[i].network} title={projects[i].name} description={projects[i].description} thumbnail={projects[i].thumbnail}/>
                     </StyledProjHolder>
                   )
                 })
@@ -187,10 +187,9 @@ const StyledSectionBody = styled.div`
 `;
 
 const StyledProjHolder = styled.div`
-  border-radius: 20px;
+  min-height: 50vh;
+  border-radius: 5px;
   overflow: hidden;
-  min-height: 40vh;
-  max-height: 60vh;
 `;
 
 const StyledSecondary = styled.span`
