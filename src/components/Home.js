@@ -28,8 +28,8 @@ export default function Home() {
       <StyledHeader ref={headerRef}>
         <StyledGradient>
           <StyledAside>
-            <span className='page-header font-green'>Blockchain</span>
-            <span className='page-header font-green'>Developer</span>
+            <span className='home-header page-header font-green'>Blockchain</span>
+            <span className='home-header page-header font-green'>Developer</span>
             <StyledSocials>
               <a href="https://linkedin.com/in/kristian-quirapas-348603213"><img src="/assets/icons/linkedin.svg" alt="LinkedIn Icon" /></a>
               <a href="https://github.com/kquirapas"><img src="/assets/icons/github.svg" alt="Github Icon" /></a>
@@ -125,7 +125,7 @@ const StyledSection = styled.section`
 `;
 
 const StyledHeader = styled.header` 
-  overflow: hidden;
+  // overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
@@ -133,9 +133,16 @@ const StyledHeader = styled.header`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media (max-width: 768px) {
+    background-image: none;
+    margin: 0;
+    margin: 3vh 5vw 3vh 0;
+  }
 `;
 
 const StyledGradient = styled.div`
+  box-sizing: border-box;
   padding: 0 10vw;
   width: 100vw;
   height: 100vh;
@@ -159,20 +166,69 @@ const StyledSocials = styled.span`
       transform: translateY(-10px) scale(1.1);
     }
   }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+
+    img {
+      margin: 3vh 2vw;
+    }
+  }
 `;
 
 const StyledAside = styled.aside`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
+
+  
+  @media (max-width: 768px) {
+    text-align: center;
+    align-items: center;
+
+
+    .home-header {
+      font-size: 60px;
+    }
+  }
+
+  @media (max-width: 411px) {
+    .home-header {
+      font-size: 34px;
+    }
+  }
 `;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${WHITE};
+
+  &:hover {
+    cursor: pointer;
+    color: ${GREEN};
+  }
+`;
+
 
 const StyledSectionHeader = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+
+    ${StyledLink} {
+      margin-bottom: 5vh;
+    }
+  }
+
+  @media (max-width: 411px) {
+
+  }
 `;
 
 const StyledSectionName = styled.p`
@@ -184,12 +240,29 @@ const StyledSectionBody = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3vw;
+
+  @media (max-width: 768px) {
+    row-gap: 5vh;
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StyledProjHolder = styled.div`
   min-height: 50vh;
   border-radius: 5px;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    row-gap: 5vh;
+    grid-template-columns: 1fr;
+    min-height: 70vh;
+  }
+
+  @media (max-width: 411px) {
+    row-gap: 5vh;
+    grid-template-columns: 1fr;
+    min-height: 70vh;
+  }
 `;
 
 const StyledSecondary = styled.span`
@@ -197,21 +270,19 @@ const StyledSecondary = styled.span`
   margin: 0.5vh 0 4vh 0;
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: ${WHITE};
-  margin-right: 20px;
-
-  &:hover {
-    cursor: pointer;
-    color: ${GREEN};
-  }
-`;
-
-const StyledGreater = styled.span`
+const StyledGreater = styled.a`
   color: ${GREEN};
+  padding: 0;
 `;
 
 const StyledGroup = styled.span`
   margin: 20px 0;
+
+  @media (max-width: 768px) {
+    span {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 2vh;
+    }
+  }
 `;

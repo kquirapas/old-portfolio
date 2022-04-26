@@ -1,37 +1,6 @@
 import styled from 'styled-components';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
-function Arrow() {
-  return (
-    <StyledDiv><span>{'>>>>>'}</span></StyledDiv>
-  );
-}
-
-const StyledDiv = styled.div`
-  opacity: 0.05;
-  z-index: -5;
-  margin: 0;
-  padding: 0;
-  color: ${GREEN};
-  font-family: Lato Black;
-  font-size: 30em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  align-self: end;
-
-  span {
-    margin: 0;
-    padding: 0;
-  }
-`;
-
-
 export default function Workflow() {
   return (
       <StyledSection>
@@ -47,7 +16,6 @@ export default function Workflow() {
               <img src="/assets/icons/figma.svg" alt="Figma Logo" />
               <img src="/assets/icons/photoshop.svg" alt="Photoshop Logo" />
             </StyledLogo>
-            <Arrow />
           </StyledAside>
           <StyledAside>
             <span className="nav-main-link font-white">Project Setup</span>
@@ -61,7 +29,6 @@ export default function Workflow() {
               <img src="/assets/icons/polygon.svg" alt="Polygon Logo" />
               <img src="/assets/icons/hardhat.svg" alt="Hardhat Logo" />
             </StyledLogo>
-            <Arrow />
           </StyledAside><StyledAside>
             <span className="nav-main-link font-white">Coding</span>
             <StyledLogo>
@@ -74,14 +41,12 @@ export default function Workflow() {
               <img src="/assets/icons/vim.svg" alt="Vim Logo" />
               <img src="/assets/icons/git.svg" alt="git Logo" />
             </StyledLogo>
-            <Arrow />
           </StyledAside><StyledAside>
             <span className="nav-main-link font-white">Testing</span>
             <StyledLogo>
               <img src="/assets/icons/waffle.svg" alt="Waffle Logo " />
               <img src="/assets/icons/mocha.svg" alt="Mocha Logo" />
             </StyledLogo>
-            <Arrow />
           </StyledAside><StyledAside>
             <span className="nav-main-link font-white">Deployment</span>
             <StyledLogo>
@@ -89,7 +54,6 @@ export default function Workflow() {
               <img src="/assets/icons/vercel.svg" alt="Vercel Logo" />
               <img src="/assets/icons/alchemy.svg" alt="Alchemy Logo" />
             </StyledLogo>
-            <Arrow />
           </StyledAside>
         </StyledGrid>
       </StyledSection>
@@ -120,6 +84,15 @@ const StyledSection = styled.section`
 const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+  @media (max-width: 768px) {
+    row-gap: 5vh;
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 411px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const StyledAside = styled.aside`

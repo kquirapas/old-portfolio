@@ -69,6 +69,10 @@ export default function Navbar({ page, headerRef }) {
   return (
     <>
       <GlobalStyle />
+      <StyledMobileNav>
+        <span className="body-text font-white">Kristian Quirapas</span>
+        <div className="nav-main-link font-white">=</div>
+      </StyledMobileNav>
       <StyledNav className="nav-transparent" ref={navbar}>
         <StyledLogoLink to="/">
           <StyledLogo>
@@ -96,19 +100,57 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const StyledNav = styled.nav`
+const StyledMobileNav = styled.nav`
   z-index: 999;
+  display: none;
+  background-color: ${BLUE};
+  border-bottom: 1px solid ${GREEN};
+  color: white;
+  box-sizing: border-box;
+  padding: 2vh 5vw;
   width: 100vw;
   position: fixed;
   top: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 2vh 1vw;
-  box-sizing: border-box;
 
-  transition: border 0.5s, background-color 0.5s;
-  transition-timing-function: ease-in-out;
+  flex-direction: center;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: block;
+    user-select: none;
+    border: 1px solid ${GREEN};
+    border-radius: 5px;
+    padding: 0.25em 0.5em;
+
+    &:hover {
+      background-color: ${GREEN};
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
+
+const StyledNav = styled.nav`
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+    z-index: 999;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2vh 1vw;
+    box-sizing: border-box;
+
+    transition: border 0.5s, background-color 0.5s;
+    transition-timing-function: ease-in-out;
+  }
 `;
 
 const StyledSpan = styled.span`
@@ -120,7 +162,6 @@ const StyledSpan = styled.span`
 `;
 
 const StyledBrand = styled.div`
-
   color: ${WHITE};
 `;
 

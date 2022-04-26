@@ -69,6 +69,10 @@ export default function Footer() {
 
 const StyledFooter = styled.footer`
   padding: 0 3vw;
+
+  @media (max-width: 768px) {
+    padding: 0 10vw;
+  }
 `;
 
 const StyledDiv = styled.div`
@@ -77,6 +81,11 @@ const StyledDiv = styled.div`
   grid-gap: 3vw;
   border-top: 1px solid ${GREEN};
   padding: 10vh 0;
+
+  @media (max-width: 768px) {
+    row-gap: 5vh;
+    grid-template-columns: 1fr;
+  }
 `;
 
 
@@ -97,6 +106,15 @@ const StyledRight = styled.aside`
 const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  @media (max-width: 768px) {
+    row-gap: 4vh;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 411px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StyledColumn = styled.aside`
@@ -106,7 +124,14 @@ const StyledColumnHead = styled(Link)`
   display: block;
   text-decoration: none;
   color: ${GREEN};
-  margin-bottom: 10%;
+
+  @media (max-width: 768px) {
+    margin-bottom: 2vh;
+  }
+
+  @media (max-width: 411px) {
+    margin-bottom: 3vh;
+  }
 `;
 
 const StyledColumnBody = styled.div`
@@ -115,7 +140,24 @@ const StyledColumnBody = styled.div`
   color: ${WHITE};
 
   a {
-    margin-bottom: 10%;
+    margin-bottom: 3vh;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1f,;
+
+    a {
+      margin-bottom: 2vh;
+    }
+  }
+
+  @media (max-width: 411px) {
+    grid-template-columns: 1fr;
+    margin-bottom: 0;
+
+    a {
+      margin-bottom: 4vh;
+    }
   }
 `;
 
@@ -184,6 +226,10 @@ const StyledCopyright = styled.p`
   color: ${GREEN};
   letter-spacing: 3px;
   align-self: start;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 
