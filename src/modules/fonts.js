@@ -5,12 +5,18 @@ import LatoBlack from '../fonts/Lato/Lato-Black.ttf';
 import LatoRegular from '../fonts/Lato/Lato-Regular.ttf';
 import LatoBold from '../fonts/Lato/Lato-Bold.ttf';
 import RobotoMonoRegular from '../fonts/RobotoMono/RobotoMono-Regular.ttf';
+import RobotoSlabBlack from '../fonts/Roboto_Slab/static/RobotoSlab-Black.ttf';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
 export default createGlobalStyle`
   @font-face {
     font-family: 'RobotoMono Regular';
     src: url(${RobotoMonoRegular}) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'RobotoSlab Black';
+    src: url(${RobotoSlabBlack}) format('truetype');
   }
 
   @font-face {
@@ -28,6 +34,10 @@ export default createGlobalStyle`
     src: url(${LatoBold}) format('truetype');
   }
 
+  .font-robotoslab {
+    font-family: RobotoSlab Black;
+  }
+
   .font-green {
     color: ${GREEN};
   }
@@ -42,6 +52,11 @@ export default createGlobalStyle`
 
   .font-white {
     color: ${WHITE};
+  }
+
+  .homepage-header {
+    font-family: Lato Black;
+    font-size: 50px;
   }
 
   .page-header {

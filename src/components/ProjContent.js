@@ -11,7 +11,6 @@ import Markdown from './Markdown';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
 export default function ProjContent() {
-  const headerRef = useRef(null);
   const { idx } = useParams();
 
   const dateAndChain = `${projects[idx].month} ${projects[idx].day}, ${projects[idx].year} | ${projects[idx].network}`;
@@ -25,10 +24,10 @@ export default function ProjContent() {
 
   return (
     <>
-      <Navbar page={"Projects"} headerRef={headerRef} />
+      <Navbar page={"Projects"} />
       <StyledPage>
         <StyledBody>
-          <StyledHeader ref={headerRef}>
+          <StyledHeader>
             <StyledLink to="/projects" className="nav-main-link"><StyledLess>{"< "}</StyledLess>Go to Projects</StyledLink>
             <h1 className="page-header">{ projects[idx].name }</h1>
             <h2 className="section-header">{ projects[idx].role}</h2>
@@ -51,6 +50,10 @@ const StyledPage = styled.div`
 
 const StyledBody = styled.div`
   width: 50vw;
+
+  @media (max-width: 768px) {
+    width: 80vw;
+  }
 `;
 
 const StyledHeader = styled.header`
@@ -64,11 +67,27 @@ const StyledHeader = styled.header`
     margin: 0;
     padding: 5vh 0;
     color: ${WHITE};
+
+    @media (max-width: 768px) {
+      font-size: 50px;
+    }
+
+    @media (max-width: 411px) {
+      font-size: 34px;
+    }
   }
 
   h2 {
     margin: 0;
     color: ${GREEN};
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 411px) {
+      font-size: 20px;
+    }
   }
 
   span {
@@ -91,3 +110,8 @@ const StyledLess = styled.span`
   color: ${GREEN} !important;
 `;
 
+  // @media (max-width: 768px) {
+  // }
+  //
+  // @media (max-width: 411px) {
+  // }

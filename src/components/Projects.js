@@ -9,8 +9,6 @@ import Footer from './Footer';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
 export default function Projects() {
-  const headerRef = useRef(null);
-
   useEffect(() => {
     document.title = 'Kristian Quirapas';
     document.body.style.margin = 0;
@@ -20,12 +18,10 @@ export default function Projects() {
 
   return (
     <>
-      <Navbar page={"Projects"} headerRef={headerRef} />
+      <Navbar page={"Projects"} />
       <StyledPage>
         <StyledBody>
-          <StyledHeader ref={headerRef}>
-            <h1 className="page-header">Projects</h1>
-          </StyledHeader>
+          <StyledHeader id="headline" className="page-header font-green">Projects</StyledHeader>
           {
             pIdx.map(i => {
               const currProj = projects[i];
@@ -33,6 +29,10 @@ export default function Projects() {
                 // even
                 return (
                   <StyledProjSection key={i} >
+                    <StyledMobileProject>
+                      <img src={currProj.thumbnail} />
+                      <div className="gradient-div-top"></div>
+                    </StyledMobileProject>
                     <aside>
                       <StyledAsideHeader>
                         <div>
@@ -45,8 +45,8 @@ export default function Projects() {
                       <h2 className="nav-main-link">{ currProj.role }</h2>
                       <h3 className="secondary-text">Role</h3>
                     </aside>
-                    <StyledProject>
-                      <img src={currProj.thumbnail} />
+                    <StyledProject src={currProj.thumbnail}>
+                      <img alt="Thumbnail of Project" src={currProj.thumbnail} />
                       <div className="gradient-div-right"></div>
                     </StyledProject>
                   </StyledProjSection>
@@ -55,6 +55,10 @@ export default function Projects() {
 
               return (
                 <StyledProjSection key={i} >
+                  <StyledMobileProject>
+                    <img src={currProj.thumbnail} />
+                    <div className="gradient-div-top"></div>
+                  </StyledMobileProject>
                   <StyledProject>
                     <img src={currProj.thumbnail} />
                     <div className="gradient-div-left"></div>
@@ -65,7 +69,7 @@ export default function Projects() {
                         <h1 className="section-header" >{ currProj.name }</h1>
                         <span className="secondary-text">{ currProj.network }</span>
                       </div>
-                      <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>Read more about the Project</StyledLink>
+                      <StyledLink to={`/projects/${i}`} className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>Read more about the Project</StyledLink>
                     </StyledAsideHeader>
                     <p className="body-text">{ currProj.description }</p>
                     <h2 className="nav-main-link">{ currProj.role }</h2>
@@ -91,6 +95,7 @@ const StyledPage = styled.div`
 
 const StyledBody = styled.div`
   width: 80vw;
+
 `;
 
 const StyledHeader = styled.header`
@@ -99,6 +104,20 @@ const StyledHeader = styled.header`
   grid-template-columns: 1fr 2fr;
   grid-gap: 3vw;
   padding: 20vh 0;
+
+  @media (max-width: 768px) {
+    padding: 5vh 0;
+    margin-top: 20vh;
+    justify-content: start;
+    text-align: center;
+    align-items: center;
+
+    font-size: 50px !important;
+  }
+
+  @media (max-width: 411px) {
+    font-size: 34px !important;
+  }
 
   h1 {
     padding: 0;
@@ -131,18 +150,31 @@ const StyledProjSection = styled.section`
   h2 {
     color: ${WHITE};
   }
+
+  aside > p {
+    padding: 0;
+    margin: 5vh 0;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 411px) {
+  }
 `;
 
 const StyledAsideHeader = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 
   h1 {
     margin: 0;
     color: ${WHITE};
   }
-
 `;
 
 const StyledGreater = styled.span`
@@ -157,15 +189,43 @@ const StyledLink = styled(Link)`
     cursor: pointer;
     color: ${GREEN};
   }
+
+  @media (max-width: 1366px) {
+    margin-top: 3vh;
+  }
+
+`;
+
+const StyledMobileProject = styled.div`
+  display: none;
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  div.gradient-div-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(12,28,44,1) 2%, rgba(12,28,44,0) 36%);
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  @media (max-width: 411px) {
+  }
 `;
 
 const StyledProject = styled.aside`
   position: relative;
-  background-color: ${BROWN};
 
   img {
     width: 100%;
-    height: 100%;
   }
 
   div.gradient-div-right {
@@ -185,4 +245,18 @@ const StyledProject = styled.aside`
     height: 100%;
     background: linear-gradient(to left, rgba(12,28,44,1) 2%, rgba(12,28,44,0) 36%);
   }
+
+  &:hover {
+    .gradient-div-right, .gradient-div-left, .gradient-div-top {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  @media (max-width: 411px) {
+  }
 `;
+

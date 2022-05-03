@@ -4,7 +4,7 @@ import { projects, pIdx } from '../content/projects';
 import { experiments, eIdx } from '../content/experiments';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
-const NUM_PROJ_TO_SHOW = 4;
+const NUM_PROJ_TO_SHOW = Math.min(4, eIdx.length);
 
 export default function Footer() {
   return (
@@ -18,7 +18,7 @@ export default function Footer() {
         <StyledRight>
           <StyledGrid>
             <StyledColumn>
-              <StyledColumnHead to="/" className="footer-header">Contacts</StyledColumnHead>
+              <StyledColumnHead to="/contacts" className="footer-header">Contacts</StyledColumnHead>
               <StyledColumnBody>
                 <StyledColumnA className="footer-link" href="mailto:kmquirapas@gmail.com"><StyledColumnLinkText>kmquirapas@gmail.com</StyledColumnLinkText></StyledColumnA>
                 <StyledColumnA className="footer-link" href="https://linkedin.com/in/kristian-quirapas-348603213"><StyledColumnLinkText>LinkedIn Profile</StyledColumnLinkText></StyledColumnA>
@@ -28,7 +28,7 @@ export default function Footer() {
               </StyledColumnBody>
             </StyledColumn>
             <StyledColumn>
-              <StyledColumnHead to="/" className="footer-header">Projects</StyledColumnHead>
+              <StyledColumnHead to="/projects" className="footer-header">Projects</StyledColumnHead>
               <StyledColumnBody>
                 {
                   pIdx.slice(0,NUM_PROJ_TO_SHOW).map(i => {
@@ -40,7 +40,7 @@ export default function Footer() {
               </StyledColumnBody>
             </StyledColumn>
             <StyledColumn>
-              <StyledColumnHead to="/" className="footer-header">Experiments</StyledColumnHead>
+              <StyledColumnHead to="/experiments" className="footer-header">Experiments</StyledColumnHead>
               <StyledColumnBody>
                 {
                   pIdx.slice(0,NUM_PROJ_TO_SHOW).map(i => {
@@ -52,13 +52,13 @@ export default function Footer() {
               </StyledColumnBody>
             </StyledColumn>
             <StyledColumn>
-              <StyledColumnHead to="/" className="footer-header">About</StyledColumnHead>
+              <StyledColumnHead to="/about" className="footer-header">About</StyledColumnHead>
               <StyledColumnBody>
                 <StyledColumnLink className="footer-link" to="/about"><StyledColumnLinkText>Get my Resume</StyledColumnLinkText></StyledColumnLink>
               </StyledColumnBody>
             </StyledColumn>
           </StyledGrid>
-          <StyledDescription className="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt ultricies eleifend. Nam iaculis arcu tristique felis viverra, eu egestas lectus cursus. Fusce odio nisi, malesuada eget tellus at, finibus accumsan est. Cras aliquet est in lectus luctus iaculis. Vestibulum elementum imperdiet ipsum vel euismod. Pellentesque mollis,</StyledDescription>
+          <StyledDescription className="body-text">I'm a fullstack blockchain engineer who focuses on security and cross-chain support.</StyledDescription>
         </StyledRight>
       </StyledDiv>
       <StyledCopyright>&copy; Kristian Quirapas. All Rights Reserved</StyledCopyright>
@@ -121,6 +121,7 @@ const StyledColumn = styled.aside`
 `;
 
 const StyledColumnHead = styled(Link)`
+  margin-bottom: 5vh;
   display: block;
   text-decoration: none;
   color: ${GREEN};
@@ -140,14 +141,14 @@ const StyledColumnBody = styled.div`
   color: ${WHITE};
 
   a {
-    margin-bottom: 3vh;
+    margin-bottom: 5vh;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr 1f,;
 
     a {
-      margin-bottom: 2vh;
+      margin-bottom: 4vh;
     }
   }
 
@@ -156,7 +157,7 @@ const StyledColumnBody = styled.div`
     margin-bottom: 0;
 
     a {
-      margin-bottom: 4vh;
+      margin-bottom: 3vh;
     }
   }
 `;

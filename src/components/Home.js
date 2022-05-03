@@ -7,15 +7,13 @@ import DevStack from './DevStack';
 import Workflow from './Workflow';
 import ProjectPrev from './ProjectPrev';
 import { pIdx, projects } from '../content/projects';
-import { eIdx, experiments } from '../content/projects';
+import { eIdx, experiments } from '../content/experiments';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
 
 const NUM_PROJ_TO_SHOW = 2;
 
 export default function Home() {
-  const headerRef = useRef(null);
-
   useEffect(() => {
     document.title = 'Kristian Quirapas';
     document.body.style.margin = 0;
@@ -25,11 +23,9 @@ export default function Home() {
 
   return (
     <>
-      <StyledHeader ref={headerRef}>
-        <StyledGradient>
+      <StyledHeader>
           <StyledAside>
-            <span className='home-header page-header font-green'>Blockchain</span>
-            <span className='home-header page-header font-green'>Developer</span>
+            <span id="headline" className='homepage-header font-green'>Building <span className="font-white">blockchain</span> apps that make <span className="font-white">you</span> the <span className="font-robotoslab font-white">industry leader</span></span>
             <StyledSocials>
               <a href="https://linkedin.com/in/kristian-quirapas-348603213"><img src="/assets/icons/linkedin.svg" alt="LinkedIn Icon" /></a>
               <a href="https://github.com/kquirapas"><img src="/assets/icons/github.svg" alt="Github Icon" /></a>
@@ -37,23 +33,22 @@ export default function Home() {
               <a href="https://www.youtube.com/channel/UCaU88FuhkVKO0PJViRjvTLw"><img src="/assets/icons/youtube.svg" alt="Youtube Icon" /></a>
             </StyledSocials>
             <StyledGroup>
-              <p className='body-text'>If you're interested to know more, then let me save you some time by giving you these links.</p>
+              <p className='body-text'>Resume? Projects? Say no more:</p>
               <span>
-                <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>View Projects</StyledLink>
-                <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>Read About Me (Resume)</StyledLink>
+                <StyledLink to="/projects" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>View Projects</StyledLink>
+                <StyledLink to="/about" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>Read About Me (Resume)</StyledLink>
               </span>
             </StyledGroup>
             <StyledGroup>
-              <p className='body-text'>Formal projects deepen my expertise, but personal projects widen my horizon. Here, have a look</p>
+              <p className='body-text'>Want something personal? Check this link:</p>
               <span>
-                <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>Explore My Experiments</StyledLink>
+                <StyledLink to="/experiments" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>Explore My Experiments</StyledLink>
               </span>
             </StyledGroup>
           </StyledAside>
-        </StyledGradient>
       </StyledHeader>
 
-      <Navbar page={"Home"} headerRef={headerRef} />
+      <Navbar page={"Home"} />
 
       <StyledPage>
         <StyledBody>
@@ -63,10 +58,10 @@ export default function Home() {
           <StyledSection>
             <StyledSectionHeader>
                 <div>
-                  <StyledSectionName className="section-header">Projects</StyledSectionName>
-                  <StyledSecondary className="secondary-text">How I Solve Problems</StyledSecondary>
+                  <StyledSectionName className="section-header">Worried about my experience?</StyledSectionName>
+                  <StyledSecondary className="secondary-text">Check some of these works</StyledSecondary>
                 </div>
-                <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>More Projects</StyledLink>
+                <StyledLink to="/projects" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>More Projects</StyledLink>
             </StyledSectionHeader>
             <StyledSectionBody>
               {
@@ -84,17 +79,17 @@ export default function Home() {
           <StyledSection>
             <StyledSectionHeader>
                 <div>
-                  <StyledSectionName className="section-header">Experiments</StyledSectionName>
-                  <StyledSecondary className="secondary-text">How I Stay Creative</StyledSecondary>
+                  <StyledSectionName className="section-header">Want to see something personal?</StyledSectionName>
+                  <StyledSecondary className="secondary-text">See some works I played with</StyledSecondary>
                 </div>
-                <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>More Experiments</StyledLink>
+                <StyledLink to="/experiments" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>More Experiments</StyledLink>
             </StyledSectionHeader>
             <StyledSectionBody>
               {
-                pIdx.slice(0,NUM_PROJ_TO_SHOW).map( i => {
+                eIdx.slice(0,NUM_PROJ_TO_SHOW).map( i => {
                   return (
                     <StyledProjHolder key={i} >
-                      <ProjectPrev key={i} link={`/experiments/${i}`} details={projects[i].year + ' - ' + projects[i].network} title={projects[i].name} description={projects[i].description} thumbnail={projects[i].thumbnail}/>
+                      <ProjectPrev key={i} link={`/experiments/${i}`} details={experiments[i].year + ' - ' + experiments[i].network} title={experiments[i].name} description={experiments[i].description} thumbnail={experiments[i].thumbnail}/>
                     </StyledProjHolder>
                   )
                 })
@@ -124,31 +119,6 @@ const StyledSection = styled.section`
   padding: 10vh 0;
 `;
 
-const StyledHeader = styled.header` 
-  // overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-  background-image: url(/assets/portfolio-picture.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  @media (max-width: 768px) {
-    background-image: none;
-    margin: 0;
-    margin: 3vh 5vw 3vh 0;
-  }
-`;
-
-const StyledGradient = styled.div`
-  box-sizing: border-box;
-  padding: 0 10vw;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(to top, rgba(12,28,44,1) 2%, rgba(12,28,44,0) 36%);
-`;
-
 const StyledSocials = styled.span`
   display: flex;
   flex-direction: row;
@@ -176,26 +146,40 @@ const StyledSocials = styled.span`
   }
 `;
 
+const StyledHeader = styled.header`
+  display: flex;
+  justify-content: center;
+`;
+
 const StyledAside = styled.aside`
-  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 30px;
+  max-width: 900px;
+  text-align: center;
+  box-sizing: border-box;
+  min-height: 900px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
 
+  #headline {
+    font-size: 60px;
+  }
   
   @media (max-width: 768px) {
+    margin-top: 20vh;
+    justify-content: start;
     text-align: center;
     align-items: center;
 
-
-    .home-header {
-      font-size: 60px;
+    #headline {
+      font-size: 50px;
     }
   }
 
   @media (max-width: 411px) {
-    .home-header {
+    #headline {
       font-size: 34px;
     }
   }
@@ -248,20 +232,20 @@ const StyledSectionBody = styled.div`
 `;
 
 const StyledProjHolder = styled.div`
-  min-height: 50vh;
+  height: 30vh;
   border-radius: 5px;
   overflow: hidden;
 
   @media (max-width: 768px) {
     row-gap: 5vh;
     grid-template-columns: 1fr;
-    min-height: 70vh;
+    height: 50vh;
   }
 
   @media (max-width: 411px) {
     row-gap: 5vh;
     grid-template-columns: 1fr;
-    min-height: 70vh;
+    height: 50vh;
   }
 `;
 
@@ -278,11 +262,20 @@ const StyledGreater = styled.a`
 const StyledGroup = styled.span`
   margin: 20px 0;
 
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    ${StyledLink} {
+      margin: 10px;
+    }
+  }
+
   @media (max-width: 768px) {
     span {
-      display: grid;
       grid-template-columns: 1fr;
-      row-gap: 2vh;
     }
   }
 `;

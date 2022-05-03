@@ -9,24 +9,31 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess=aoO
-badd +14 src/components/Projects.js
-badd +35 src/components/ProjContent.js
-badd +11 src/content/projects.js
+badd +225 src/components/Projects.js
+badd +23 src/components/ProjContent.js
+badd +630 src/content/projects.js
 badd +1 src/content/test.md
-badd +50 src/modules/fonts.js
-badd +67 src/components/Home.js
-badd +1 src/index.js
-badd +54 ./src/components/Contacts.js
-badd +135 src/components/Navbar.js
-badd +7 src/components/ProjectPrev.js
-badd +57 src/components/Footer.js
-badd +25 src/components/Workflow.js
-badd +12 src/components/DevStack.js
+badd +67 src/modules/fonts.js
+badd +281 src/components/Home.js
+badd +26 src/index.js
+badd +68 ./src/components/Contacts.js
+badd +166 src/components/Navbar.js
+badd +22 src/components/ProjectPrev.js
+badd +1 src/components/Footer.js
+badd +2 src/components/Workflow.js
+badd +9 src/components/DevStack.js
 badd +1 src/components/App.js
-badd +4 src/colors.js
+badd +1 src/colors.js
+badd +39 notes
+badd +65 src/components/Experiments.js
+badd +86 src/components/Markdown.js
+badd +31 src/components/ExpContent.js
+badd +1 src/content/experiments.js
+badd +106 src/components/About.js
+badd +1 breakpoints
 argglobal
 %argdel
-edit src/components/Home.js
+edit src/components/Projects.js
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -43,10 +50,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 94 + 95) / 190)
+exe 'vert 2resize ' . ((&columns * 95 + 95) / 190)
 argglobal
-balt src/components/Footer.js
+balt src/components/Home.js
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -57,19 +64,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 76 - ((17 * winheight(0) + 22) / 44)
+let s:l = 223 - ((21 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 76
-normal! 0188|
+keepjumps 223
+normal! 0
 wincmd w
 argglobal
-if bufexists(fnamemodify("src/content/projects.js", ":p")) | buffer src/content/projects.js | else | edit src/content/projects.js | endif
+if bufexists(fnamemodify("src/content/experiments.js", ":p")) | buffer src/content/experiments.js | else | edit src/content/experiments.js | endif
 if &buftype ==# 'terminal'
-  silent file src/content/projects.js
+  silent file src/content/experiments.js
 endif
-balt ./src/components/Contacts.js
+balt src/content/projects.js
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -80,16 +87,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 11 - ((10 * winheight(0) + 22) / 44)
+let s:l = 1 - ((0 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 11
+keepjumps 1
 normal! 0
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 94 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 94 + 95) / 190)
+exe 'vert 2resize ' . ((&columns * 95 + 95) / 190)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

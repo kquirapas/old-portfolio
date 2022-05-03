@@ -5,8 +5,8 @@ export default function() {
   return (
     <StyledSection>
       <StyledAside>
-        <span className="section-header font-green">My Web 3.0 Stack</span>
-        <span className="secondary-text font-brown">How I Keep Myself Productive</span>
+        <span className="section-header font-green">Modern Web 3 Stack</span>
+        <span className="secondary-text font-brown">Perfect for leading the industry</span>
         <StyledLogo>
           <img src="/assets/icons/html.svg" alt="HTML Logo" />
           <img src="/assets/icons/css.svg" alt="CSS Logo" />
@@ -61,6 +61,12 @@ const StyledLogo = styled.span`
     &:hover {
       opacity: 1;
       transform: skew(20deg, -10deg) translateY(-10px) scale(1.1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    img {
+      height: 5vh;
     }
   }
 `;

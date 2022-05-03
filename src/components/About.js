@@ -9,8 +9,6 @@ import Footer from './Footer';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
 export default function About() {
-  const headerRef = useRef(null);
-
   useEffect(() => {
     document.title = 'Kristian Quirapas';
     document.body.style.margin = 0;
@@ -20,25 +18,29 @@ export default function About() {
 
   return (
     <>
-      <Navbar page={"About"} headerRef={headerRef} />
+      <Navbar page={"About"} />
       <StyledPage>
         <StyledBody>
-          <StyledHeader ref={headerRef}>
+          <StyledHeader>
             <StyledMotto>
               <StyledWide>Wide in Horizon</StyledWide>
               <StyledDeep>deep<br/>in<br/>skill</StyledDeep>
             </StyledMotto>
           </StyledHeader>
           <StyledSection>
+            <img id="img-left" src="/assets/github.jpg" alt="A Picture of Me" />
             <aside>
               <h1 className="section-header font-white">Hey, I'm K</h1>
               <h6 className="secondary-text font-green">Blockchain Developer</h6>
               <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>My Resume</StyledLink>
               <p className="body-text font-brown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt ultricies eleifend. Nam iaculis arcu tristique felis viverra, eu egestas lectus cursus. Fusce odio nisi, malesuada eget tellus at, finibus accumsan est. Cras </p>
               <h2 className="nav-main-link font-white">Computer Science, UP Diliman</h2>
-              <h6 className="secondary-text font-green">Batch 2023</h6>
+              <h6 className="secondary-text font-green">2018 - 2023</h6>
+
+              <h2 className="nav-main-link font-white">Freelance Developer</h2>
+              <h6 className="secondary-text font-green">2015 - Present</h6>
             </aside>
-            <img src="/assets/github.jpg" alt="A Picture of Me" />
+            <img id="img-right" src="/assets/github.jpg" alt="A Picture of Me" />
           </StyledSection>
         </StyledBody>
       </StyledPage>
@@ -85,6 +87,10 @@ const StyledHeader = styled.header`
 const StyledMotto = styled.div`
   font-size: 100px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 34px;
+  }
 `;
 
 const StyledWide = styled.div`  
@@ -126,6 +132,26 @@ const StyledSection = styled.section`
     width: 100%;
     border-radius: 20px;
     overflow: hidden;
+  }
+
+  #img-left {
+    display: none;
+  }
+
+  #img-right {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+
+    #img-left {
+      display: block;
+    }
+
+    #img-right {
+      display: none;
+    }
   }
 `;
 

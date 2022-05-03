@@ -18,13 +18,12 @@ export default function ProjectPrev({ details, title, description, link, thumbna
 
 
 const StyledBody = styled.div`
-  text-align: justify;
 `;
 
 const StyledContainer = styled(Link)`
   box-sizing: border-box;
   border: 3px solid ${GREEN};
-  padding: 30px 50px;
+  padding: 3vh 3vw;
   display: block;
   text-decoration: none;
   // background-image: url(${props => props.thumbnail});
@@ -47,6 +46,14 @@ const StyledContainer = styled(Link)`
     ${StyledBody} {
       display: none;
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: 3vh 5w;
+  }
+
+  @media (max-width: 411px) {
+    padding: 3vh 5vw;
   }
 `;
 

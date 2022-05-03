@@ -5,8 +5,8 @@ export default function Workflow() {
   return (
       <StyledSection>
         <StyledHeader>
-          <h1 className="section-header">My Workflow</h1>
-          <p className="secondary-text">How I Organize My Time</p>
+          <h1 className="section-header">Diverse Set of Skills</h1>
+          <p className="secondary-text">Get 2 for the price of one</p>
         </StyledHeader>
         <StyledGrid>
           <StyledAside>

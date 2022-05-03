@@ -20,6 +20,10 @@ function ContactPoint({ contact, href, description }) {
 const StyledHead = styled.a`
   text-decoration: none;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 20px !important;
+  }
 `;
 
 const StyledDesc = styled.p`
@@ -27,8 +31,6 @@ const StyledDesc = styled.p`
 `;
 
 export default function Contacts() {
-  const headerRef = useRef(null);
-
   useEffect(() => {
     document.title = 'Kristian Quirapas';
     document.body.style.margin = 0;
@@ -38,10 +40,10 @@ export default function Contacts() {
 
   return (
     <>
-      <Navbar page={"Contacts"} headerRef={headerRef} />
+      <Navbar page={"Contacts"} />
       <StyledPage>
         <StyledBody>
-          <StyledHeader ref={headerRef}>
+          <StyledHeader>
             <h1 className="page-header font-green">Contacts</h1>
             <p className="body-text font-brown">It's nice knowing you're here. You can reach me fastest with email, but feel free to reach me out with all these links.</p>
           </StyledHeader>
@@ -49,9 +51,9 @@ export default function Contacts() {
             <StyledGrid>
               <ContactPoint contact={"kmquirapas@gmail.com"} href={"mailto:kmquirapas@gmail.com"} description={"Send me an email"} />
               <ContactPoint contact={"LinkedIn"} href={"https://linkedin.com/in/kristian-quirapas-348603213"} description={"Let's connect"} />
+              <ContactPoint contact={"Twitter"} href={"https://twitter.com/k_quirapas"} description={"Tweet, tweet, tweet"} />
               <ContactPoint contact={"Github"} href={"https://github.com/kquirapas"} description={"Let's collaborate"} />
               <ContactPoint contact={"Youtube Channel"} href={"https://www.youtube.com/channel/UCaU88FuhkVKO0PJViRjvTLw"} description={"Making content (sometimes)"} />
-              <ContactPoint contact={"Twitter"} href={"https://twitter.com/k_quirapas"} description={"Tweet, tweet, tweet"} />
             </StyledGrid>
           </StyledSection>
         </StyledBody>
@@ -81,9 +83,24 @@ const StyledHeader = styled.header`
 
   color: ${BROWN};
 
+  @media (max-width: 768px) {
+    padding: 5vh 0;
+    margin-top: 20vh;
+    grid-template-columns: 1fr;
+  }
+
   h1 {
     margin: 0;
     color: ${GREEN};
+
+    @media (max-width: 768px) {
+      justify-content: start;
+      font-size: 50px !important;
+    }
+
+    @media (max-width: 411px) {
+      font-size: 34px !important;
+    }
   }
 `;
 ;
@@ -99,4 +116,14 @@ const StyledGrid = styled.main`
   row-gap: 10vh;
   grid-template-columns: 1fr 1fr;
 
+  @media (max-width: 768px) {
+    row-gap: 5vh;
+    grid-template-columns: 1fr;
+  }
 `;
+
+  // @media (max-width: 768px) {
+  // }
+  //
+  // @media (max-width: 411px) {
+  // }

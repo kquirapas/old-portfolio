@@ -15,8 +15,9 @@ const StyledNavLinkText = styled.span`
   color: ${WHITE};
 `;
 
-export default function Navbar({ page, headerRef }) {
+export default function Navbar({ page }) {
   const navbar = useRef(null);
+  const [showMobileNav, setShowMobileNav] = useState(false);
 
   function getNavLink(text) {
     if (text.toLowerCase() !== page.toLowerCase()) {
@@ -38,42 +39,37 @@ export default function Navbar({ page, headerRef }) {
     );
   }
 
-  const onScroll = () => {
-    if (headerRef.current) {
-      const headerRect = headerRef.current.getBoundingClientRect();
-
-      if (Math.round(headerRect.top) < -100) {
-        navbar.current.classList.add('nav-opaque');
-      } else {
-        navbar.current.classList.remove('nav-opaque');
-      }
-    }
-  };
+  const toggleNav = () => {
+    console.log('toggle');
+    setShowMobileNav(prevShowMobileNav => !prevShowMobileNav);
+  }
 
   useEffect(() => {
-    // on refresh make navbar stay the same
-    const headerRect = headerRef.current.getBoundingClientRect();
-    if (Math.round(headerRect.top) < -100) {
-      navbar.current.classList.add('nav-opaque');
-    } else {
-      navbar.current.classList.remove('nav-opaque');
-    }
-
-    window.addEventListener('scroll', onScroll);
-
     return () => {
-      window.removeEventListener('scroll', onScroll);
     };
   }, []);
 
+
+  if (showMobileNav) {
+    return (
+      <StyledOverlay>
+        <StyledNavLink to="/" className="nav-main-link">{ getNavLink("Home") }</StyledNavLink>
+        <StyledNavLink to="/projects" className="nav-main-link">{ getNavLink("Projects") }</StyledNavLink>
+        <StyledNavLink to="/experiments" className="nav-main-link">{ getNavLink("Experiments") }</StyledNavLink>
+        <StyledNavLink to="/contacts" className="nav-main-link">{ getNavLink("Contacts") }</StyledNavLink>
+        <StyledNavLink to="/about" className="nav-main-link">{ getNavLink("About") }</StyledNavLink>
+        <section className="body-text font-green text-bold"><p onClick={toggleNav}>x</p></section>
+      </StyledOverlay>
+    )
+  }
+
   return (
     <>
-      <GlobalStyle />
       <StyledMobileNav>
         <span className="body-text font-white">Kristian Quirapas</span>
-        <div className="nav-main-link font-white">=</div>
+        <div onClick={toggleNav} className="nav-main-link font-white">=</div>
       </StyledMobileNav>
-      <StyledNav className="nav-transparent" ref={navbar}>
+      <StyledNav className="nav" ref={navbar}>
         <StyledLogoLink to="/">
           <StyledLogo>
           </StyledLogo>
@@ -93,10 +89,39 @@ export default function Navbar({ page, headerRef }) {
   );
 }
 
-const GlobalStyle = createGlobalStyle`
-  .nav-opaque {
-    background-color: ${BLUE};
-    border-bottom: 1px solid ${GREEN};
+const StyledOverlay = styled.main`
+  padding: 10vh 5vw;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: ${BLUE};
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+
+
+    p {
+      align-self: right;
+    }
+  }
+
+  section { 
+    p {
+      padding: 20px;
+    }
+    p:hover {
+      color: ${WHITE};
+      cursor: pointer;
+    }
   }
 `;
 
@@ -135,7 +160,10 @@ const StyledMobileNav = styled.nav`
 `;
 
 const StyledNav = styled.nav`
+  background-color: rgba(12, 28, 44, 0.8); // BLUE
+
   display: none;
+
   @media (min-width: 768px) {
     display: block;
     z-index: 999;
