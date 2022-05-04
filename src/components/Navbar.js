@@ -66,16 +66,14 @@ export default function Navbar({ page }) {
   return (
     <>
       <StyledMobileNav>
-        <span className="body-text font-white">Kristian Quirapas</span>
+        <StyledMobileLink to="/" className="body-text font-white">Kristian Quirapas</StyledMobileLink>
         <div onClick={toggleNav} className="nav-main-link font-white">=</div>
       </StyledMobileNav>
       <StyledNav className="nav" ref={navbar}>
         <StyledLogoLink to="/">
-          <StyledLogo>
-          </StyledLogo>
           <StyledSpan>
             <StyledBrand className="nav-logo">Kristian Quirapas</StyledBrand>
-            <StyledSecondary className="secondary-text">Blockchain Developer</StyledSecondary>
+            <StyledSecondary className="secondary-text font-green">Blockchain Developer</StyledSecondary>
           </StyledSpan>
         </StyledLogoLink>
         <StyledDiv2>
@@ -159,6 +157,14 @@ const StyledMobileNav = styled.nav`
   }
 `;
 
+const StyledMobileLink = styled(Link)`
+  padding-left: 2vw;
+  border-left: 2px solid ${GREEN};
+  color: ${WHITE};
+  font-size: 20px;
+  text-decoration: none;
+`
+
 const StyledNav = styled.nav`
   background-color: rgba(12, 28, 44, 0.8); // BLUE
 
@@ -234,5 +240,4 @@ const StyledNavLink = styled(StyledLink)`
 `;
 
 const StyledSecondary = styled.span`
-  color: ${BROWN};
 `;

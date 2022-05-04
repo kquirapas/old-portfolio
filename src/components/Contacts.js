@@ -49,7 +49,7 @@ export default function Contacts() {
           </StyledHeader>
           <StyledSection>
             <StyledGrid>
-              <ContactPoint contact={"kmquirapas@gmail.com"} href={"mailto:kmquirapas@gmail.com"} description={"Send me an email"} />
+              <ContactPoint contact={"kmquirapas@gmail.com"} href={"https://mail.google.com/mail/u/0/?fs=1&to=kmquirapas@gmail.com&tf=cm"} description={"Send me an email"} />
               <ContactPoint contact={"LinkedIn"} href={"https://linkedin.com/in/kristian-quirapas-348603213"} description={"Let's connect"} />
               <ContactPoint contact={"Twitter"} href={"https://twitter.com/k_quirapas"} description={"Tweet, tweet, tweet"} />
               <ContactPoint contact={"Github"} href={"https://github.com/kquirapas"} description={"Let's collaborate"} />

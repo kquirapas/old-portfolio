@@ -239,13 +239,13 @@ const StyledProjHolder = styled.div`
   @media (max-width: 768px) {
     row-gap: 5vh;
     grid-template-columns: 1fr;
-    height: 50vh;
+    height: 70vh;
   }
 
   @media (max-width: 411px) {
     row-gap: 5vh;
     grid-template-columns: 1fr;
-    height: 50vh;
+    height: 70vh;
   }
 `;
 

@@ -32,13 +32,16 @@ export default function About() {
             <aside>
               <h1 className="section-header font-white">Hey, I'm K</h1>
               <h6 className="secondary-text font-green">Blockchain Developer</h6>
-              <StyledLink to="/" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>My Resume</StyledLink>
-              <p className="body-text font-brown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt ultricies eleifend. Nam iaculis arcu tristique felis viverra, eu egestas lectus cursus. Fusce odio nisi, malesuada eget tellus at, finibus accumsan est. Cras </p>
+              <StyledLink href="/assets/kristian_quirapas_resume.pdf" download="Resume" target="_self" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>My Resume</StyledLink>
+              <p className="body-text font-brown">I taught myself how to code when I was 9 years old. I learned a lot, but at a slow pace. I wasn't a genius or a prodigy at all. I was merely passionate about learning and building things. I'm not special. I like living my life with intention and purpose. I like spending time with my family. I am competitive and I am harshest with myself, because I hold myself accountable for my life.</p>
               <h2 className="nav-main-link font-white">Computer Science, UP Diliman</h2>
               <h6 className="secondary-text font-green">2018 - 2023</h6>
 
               <h2 className="nav-main-link font-white">Freelance Developer</h2>
               <h6 className="secondary-text font-green">2015 - Present</h6>
+
+              <h2 className="nav-main-link font-white">Founder and CEO</h2>
+              <h6 className="secondary-text font-green">In the future (My life goal)</h6>
             </aside>
             <img id="img-right" src="/assets/github.jpg" alt="A Picture of Me" />
           </StyledSection>
@@ -74,7 +77,7 @@ const StyledHeader = styled.header`
   }
 
   h2 {
-    margin: 0;
+    margin: 5vh 0 0 0;
     color: ${GREEN};
   }
 
@@ -116,7 +119,7 @@ const StyledSection = styled.section`
     }
 
     h2 {
-      margin: 3vh 0 0 0;
+      margin: 5vh 0 0 0;
     }
 
     h6 {
@@ -155,7 +158,7 @@ const StyledSection = styled.section`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   display: block;
   text-decoration: none;
   color: ${WHITE};

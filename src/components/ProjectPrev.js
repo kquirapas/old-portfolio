@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
 export default function ProjectPrev({ details, title, description, link, thumbnail }) {
-  console.log(thumbnail);
-
   return (
     <StyledContainer thumbnail={thumbnail} to={link}>
       <StyledContent>

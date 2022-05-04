@@ -12,7 +12,7 @@ experiments["0"] = {
     
     network: "Localhost",
 
-    description: "Exploring the process of generating images with code. I first created the parts with Photoshop and eventually generating their combinations with Pillow and Python 3 code.",
+    description: "Exploring the process of generating images with code for NFT collection drops. I first created the parts with Photoshop and eventually generating their combinations with Pillow and Python 3 code.",
 
     role: "Python3 Developer",
 

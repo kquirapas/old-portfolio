@@ -4,14 +4,15 @@ import { projects, pIdx } from '../content/projects';
 import { experiments, eIdx } from '../content/experiments';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
-const NUM_PROJ_TO_SHOW = Math.min(4, eIdx.length);
+const NUM_PROJ_TO_SHOW = Math.min(4, pIdx.length);
+const NUM_EXPE_TO_SHOW = Math.min(4, eIdx.length);
 
 export default function Footer() {
   return (
     <StyledFooter>
       <StyledDiv>
         <StyledLeft>
-          <StyledLogo></StyledLogo>
+          <StyledLogo src="/assets/branding.jpg" />
           <StyledSpan>Kristian Quirapas</StyledSpan>
           <StyledSecondary>Blockchain Developer</StyledSecondary>
         </StyledLeft>
@@ -43,7 +44,7 @@ export default function Footer() {
               <StyledColumnHead to="/experiments" className="footer-header">Experiments</StyledColumnHead>
               <StyledColumnBody>
                 {
-                  pIdx.slice(0,NUM_PROJ_TO_SHOW).map(i => {
+                  pIdx.slice(0,NUM_EXPE_TO_SHOW).map(i => {
                     return (
                       <StyledColumnLink key={i} className="footer-link" to={`/projects/${i}`}><StyledColumnLinkText>{ experiments[i].name }</StyledColumnLinkText></StyledColumnLink>
                     )
@@ -58,7 +59,6 @@ export default function Footer() {
               </StyledColumnBody>
             </StyledColumn>
           </StyledGrid>
-          <StyledDescription className="body-text">I'm a fullstack blockchain engineer who focuses on security and cross-chain support.</StyledDescription>
         </StyledRight>
       </StyledDiv>
       <StyledCopyright>&copy; Kristian Quirapas. All Rights Reserved</StyledCopyright>
@@ -195,10 +195,14 @@ const StyledDescription = styled.p`
 
 
 const StyledLogo = styled.img`
-  width: 100%;
   height: 200px;
   border-radius: 10px;
   background-color: ${GREEN};
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 

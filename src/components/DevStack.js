@@ -51,6 +51,10 @@ const StyledLogo = styled.span`
   justify-content: center;
 
   img {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: ${GREEN};
+
     margin: 20px;
     display: block;
     height: 10vh;

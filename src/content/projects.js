@@ -19,6 +19,10 @@ projects["0"] = {
     thumbnail: "/assets/projects/portfolio/thumbnail.png",
 
     content: `
+# Deployment
+
+[Portfolio [Link]](https://kquirapas.github.io)
+
 # Goals for this Project
 - Simple
 - Responsive
@@ -565,7 +569,7 @@ projects["2"] = {
     
     network: "Web 2",
 
-    description: "A proximity-sensitive 2D lobby for people to hangout and have discussions with. The entire app was built with ReactJS, WebRTC, and Firebase (BaaS).",
+    description: "A proximity-sensitive 2D lobby for people to hangout and have discussions. The entire app was built with ReactJS, WebRTC, and Firebase (BaaS).",
 
     role: "Backend Developer",
 
@@ -615,7 +619,7 @@ The answer to that is a **shared state between users**. The core of multiplayer 
 
 ![Proximic Screenshot](/assets/projects/proximic/multiplayer.png)
 
-# Problem #3: Leadning the Team and Having Product Vision
+# Problem #3: Leading the Team and Having Product Vision
 
 Working as a freelancer developer since 2015 has proved to be a weakness in leading a team of developers. My mindset and the way I see the world is totally different from how my teammates live their lives. This isn't surprising since we're all different people, however it had proved itself to be challenging even for me.
 
