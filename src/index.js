@@ -10,6 +10,8 @@ import ProjContent from './components/ProjContent';
 import Experiments from './components/Experiments';
 import ExpContent from './components/ExpContent';
 import Contacts from './components/Contacts';
+import NotFound from './components/NotFound.js';
+
 import reportWebVitals from './reportWebVitals';
 import GoToTop from './components/GoToTop';
 
@@ -21,7 +23,7 @@ import { Helmet } from 'react-helmet';
 function MetaTags() {
   return (
     <Helmet>
-      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
       <meta property="og:title" content="Kristian Quirapas | Portfolio" />
       <meta property="og:url" content="https://kquirapas.github.io" />
       <meta property="og:description" content="A blockchain engineer's passion for building and security." />
@@ -70,6 +72,7 @@ ReactDOM.render(
         <Route exact path="/experiments/:idx" element={<ExpContent />}/>
         <Route exact path="/about" element={<About />}/>
         <Route exact path="/contacts" element={<Contacts />}/>
+        <Route path="*" element={<NotFound />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

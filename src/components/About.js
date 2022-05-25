@@ -33,7 +33,7 @@ export default function About() {
               <h1 className="section-header font-white">Hey, I'm K</h1>
               <h6 className="secondary-text font-green">Blockchain Developer</h6>
               <StyledLink href="/assets/kristian_quirapas_resume.pdf" download="Resume" target="_self" className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>My Resume</StyledLink>
-              <p className="body-text font-brown">I taught myself how to code when I was 9 years old. I learned a lot, but at a slow pace. I wasn't a genius or a prodigy at all. I was merely passionate about learning and building things. I'm not special. I like living my life with intention and purpose. I like spending time with my family. I am competitive and I am harshest with myself, because I hold myself accountable for my life.</p>
+              <p className="body-text font-brown">I taught myself how to code when I was 9 years old. I learned a lot, but at a slow pace. I wasn't a genius or a prodigy at all. I was merely passionate about learning and building things. I'm also really competitive and harsh with myself, because I hold myself accountable for my life.</p>
               <h2 className="nav-main-link font-white">Computer Science, UP Diliman</h2>
               <h6 className="secondary-text font-green">2018 - 2023</h6>
 

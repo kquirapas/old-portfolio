@@ -53,12 +53,11 @@ export default function Navbar({ page }) {
   if (showMobileNav) {
     return (
       <StyledOverlay>
-        <StyledNavLink to="/" className="nav-main-link">{ getNavLink("Home") }</StyledNavLink>
-        <StyledNavLink to="/projects" className="nav-main-link">{ getNavLink("Projects") }</StyledNavLink>
-        <StyledNavLink to="/experiments" className="nav-main-link">{ getNavLink("Experiments") }</StyledNavLink>
-        <StyledNavLink to="/contacts" className="nav-main-link">{ getNavLink("Contacts") }</StyledNavLink>
-        <StyledNavLink to="/about" className="nav-main-link">{ getNavLink("About") }</StyledNavLink>
-        <section className="body-text font-green text-bold"><p onClick={toggleNav}>x</p></section>
+        <StyledNavLink to="/projects" className="nav-main-link"><span className="material-symbols-rounded font-green">work</span>{ getNavLink("Projects") }</StyledNavLink>
+        <StyledNavLink to="/experiments" className="nav-main-link"><span className="material-symbols-rounded font-green">science</span>{ getNavLink("Experiments") }</StyledNavLink>
+        <StyledNavLink to="/contacts" className="nav-main-link"><span className="material-symbols-rounded font-green">waving_hand</span>{ getNavLink("Contacts") }</StyledNavLink>
+        <StyledNavLink to="/about" className="nav-main-link"><span className="material-symbols-rounded font-green">person</span>{ getNavLink("About") }</StyledNavLink>
+        <section className="body-text font-green text-bold"><p onClick={toggleNav}><span className="material-symbols-rounded font-green">cancel</span></p></section>
       </StyledOverlay>
     )
   }
@@ -66,21 +65,25 @@ export default function Navbar({ page }) {
   return (
     <>
       <StyledMobileNav>
-        <StyledMobileLink to="/" className="body-text font-white">Kristian Quirapas</StyledMobileLink>
-        <div onClick={toggleNav} className="nav-main-link font-white">=</div>
+        <div>
+          <span id="logo" className="material-symbols-rounded font-green">network_intelligence</span>
+          <StyledMobileLink to="/" className="body-text font-white">Kristian Quirapas</StyledMobileLink>
+        </div>
+        <div id="mobile-nav-logo" onClick={toggleNav} className="nav-main-link font-white"><span id="logo" className="material-symbols-rounded font-green">menu</span></div>
       </StyledMobileNav>
       <StyledNav className="nav" ref={navbar}>
         <StyledLogoLink to="/">
+          <span id="logo" className="material-symbols-rounded font-green">network_intelligence</span>
           <StyledSpan>
             <StyledBrand className="nav-logo">Kristian Quirapas</StyledBrand>
             <StyledSecondary className="secondary-text font-green">Blockchain Developer</StyledSecondary>
           </StyledSpan>
         </StyledLogoLink>
         <StyledDiv2>
-          <StyledNavLink to="/projects" className="nav-main-link">{ getNavLink("Projects") }</StyledNavLink>
-          <StyledNavLink to="/experiments" className="nav-main-link">{ getNavLink("Experiments") }</StyledNavLink>
-          <StyledNavLink to="/contacts" className="nav-main-link">{ getNavLink("Contacts") }</StyledNavLink>
-          <StyledNavLink to="/about" className="nav-main-link">{ getNavLink("About") }</StyledNavLink>
+          <StyledNavLink to="/projects" className="nav-main-link"><span className="material-symbols-rounded font-green">work</span>{ getNavLink("Projects") }</StyledNavLink>
+          <StyledNavLink to="/experiments" className="nav-main-link"><span className="material-symbols-rounded font-green">science</span>{ getNavLink("Experiments") }</StyledNavLink>
+          <StyledNavLink to="/contacts" className="nav-main-link"><span className="material-symbols-rounded font-green">waving_hand</span>{ getNavLink("Contacts") }</StyledNavLink>
+          <StyledNavLink to="/about" className="nav-main-link"><span className="material-symbols-rounded font-green">person</span>{ getNavLink("About") }</StyledNavLink>
         </StyledDiv2>
       </StyledNav>
     </>
@@ -106,19 +109,21 @@ const StyledOverlay = styled.main`
     align-items: center;
     align-self: center;
 
-
-    p {
-      align-self: right;
-    }
-  }
-
-  section { 
     p {
       padding: 20px;
+      align-self: right;
+
+      span {
+        font-size: 30px;
+      }
     }
+
     p:hover {
-      color: ${WHITE};
       cursor: pointer;
+
+      span {
+        color: ${WHITE};
+      }
     }
   }
 `;
@@ -140,15 +145,27 @@ const StyledMobileNav = styled.nav`
   align-items: center;
 
   div {
-    display: block;
+    display: flex;
+    align-items: center;
+  }
+
+  #mobile-nav-logo {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     user-select: none;
-    border: 1px solid ${GREEN};
-    border-radius: 5px;
-    padding: 0.25em 0.5em;
+
+    span {
+      font-size: 30px;
+    }
 
     &:hover {
-      background-color: ${GREEN};
       cursor: pointer;
+
+      span {
+        color: ${WHITE};
+      }
     }
   }
 
@@ -159,7 +176,6 @@ const StyledMobileNav = styled.nav`
 
 const StyledMobileLink = styled(Link)`
   padding-left: 2vw;
-  border-left: 2px solid ${GREEN};
   color: ${WHITE};
   font-size: 20px;
   text-decoration: none;
@@ -169,6 +185,10 @@ const StyledNav = styled.nav`
   background-color: rgba(12, 28, 44, 0.8); // BLUE
 
   display: none;
+
+  #logo {
+    font-size: 50px;
+  }
 
   @media (min-width: 768px) {
     display: block;
@@ -229,6 +249,8 @@ const StyledLogo = styled.div`
 `;
 
 const StyledNavLink = styled(StyledLink)`
+  display: flex;
+  align-items: center;
   margin: 0 20px;
 
   color: ${BROWN};
@@ -236,6 +258,10 @@ const StyledNavLink = styled(StyledLink)`
   &:hover ${HiddenEmphasis} {
     visibility: visible;
     color: ${GREEN};
+  }
+
+  span {
+    margin-right: 2px;
   }
 `;
 

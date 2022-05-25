@@ -232,7 +232,7 @@ const StyledSectionBody = styled.div`
 `;
 
 const StyledProjHolder = styled.div`
-  height: 30vh;
+  height: 40vh;
   border-radius: 5px;
   overflow: hidden;
 

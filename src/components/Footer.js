@@ -21,7 +21,7 @@ export default function Footer() {
             <StyledColumn>
               <StyledColumnHead to="/contacts" className="footer-header">Contacts</StyledColumnHead>
               <StyledColumnBody>
-                <StyledColumnA className="footer-link" href="mailto:kmquirapas@gmail.com"><StyledColumnLinkText>kmquirapas@gmail.com</StyledColumnLinkText></StyledColumnA>
+                <StyledColumnA className="footer-link" href="https://mail.google.com/mail/u/0/?fs=1&to=kmquirapas@gmail.com&tf=cm" target="_blank"><StyledColumnLinkText>kmquirapas@gmail.com</StyledColumnLinkText></StyledColumnA>
                 <StyledColumnA className="footer-link" href="https://linkedin.com/in/kristian-quirapas-348603213"><StyledColumnLinkText>LinkedIn Profile</StyledColumnLinkText></StyledColumnA>
                 <StyledColumnA className="footer-link" href="https://github.com/kquirapas"><StyledColumnLinkText>Github</StyledColumnLinkText></StyledColumnA>
                 <StyledColumnA className="footer-link" href="https://www.youtube.com/channel/UCaU88FuhkVKO0PJViRjvTLw"><StyledColumnLinkText>Youtube Channel</StyledColumnLinkText></StyledColumnA>
@@ -46,7 +46,7 @@ export default function Footer() {
                 {
                   pIdx.slice(0,NUM_EXPE_TO_SHOW).map(i => {
                     return (
-                      <StyledColumnLink key={i} className="footer-link" to={`/projects/${i}`}><StyledColumnLinkText>{ experiments[i].name }</StyledColumnLinkText></StyledColumnLink>
+                      <StyledColumnLink key={i} className="footer-link" to={`/experiments/${i}`}><StyledColumnLinkText>{ experiments[i].name }</StyledColumnLinkText></StyledColumnLink>
                     )
                   })
                 }
@@ -77,12 +77,12 @@ const StyledFooter = styled.footer`
 
 const StyledDiv = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2.5fr;
+  grid-template-columns: 0.5fr 3fr;
   grid-gap: 3vw;
   border-top: 1px solid ${GREEN};
   padding: 10vh 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1366px) {
     row-gap: 5vh;
     grid-template-columns: 1fr;
   }
@@ -195,12 +195,13 @@ const StyledDescription = styled.p`
 
 
 const StyledLogo = styled.img`
-  height: 200px;
+  min-width: 400px;
+  width: 100%;
   border-radius: 10px;
   background-color: ${GREEN};
 
   @media (max-width: 768px) {
-    width: 100%;
+    min-width: 200px;
     height: auto;
   }
 `;

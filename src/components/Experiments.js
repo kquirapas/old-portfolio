@@ -70,7 +70,7 @@ export default function Experiments() {
                         <h1 className="section-header" >{ currProj.name }</h1>
                         <span className="secondary-text">{ currProj.network }</span>
                       </div>
-                      <StyledLink to={`/projects/${i}`} className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>Read more about the Project</StyledLink>
+                      <StyledLink to={`/experiments/${i}`} className="nav-main-link"><StyledGreater>{"> "}</StyledGreater>Read more about the Project</StyledLink>
                     </StyledAsideHeader>
                     <p className="body-text">{ currProj.description }</p>
                     <h2 className="nav-main-link">{ currProj.role }</h2>

@@ -16,7 +16,7 @@ projects["0"] = {
 
     role: "Frontend Developer",
 
-    thumbnail: "/assets/projects/portfolio/thumbnail.png",
+    thumbnail: "/assets/meta-image.jpg",
 
     content: `
 # Deployment
@@ -576,6 +576,9 @@ projects["2"] = {
     thumbnail: "/assets/projects/proximic/thumbnail.png",
 
     content: `
+# Deployment
+
+[Proximic Deployed](https://proximic-a2a4e.web.app/)
 
 # Other Roles for this Project
 - Scrum Master

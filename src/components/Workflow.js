@@ -85,6 +85,11 @@ const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
+  @media (max-width: 1366px) {
+    row-gap: 5vh;
+    grid-template-columns: 1fr;
+  }
+
   @media (max-width: 768px) {
     row-gap: 5vh;
     grid-template-columns: 1fr;
