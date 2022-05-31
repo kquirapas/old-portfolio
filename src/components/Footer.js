@@ -21,11 +21,9 @@ export default function Footer() {
             <StyledColumn>
               <StyledColumnHead to="/contacts" className="footer-header">Contacts</StyledColumnHead>
               <StyledColumnBody>
-                <StyledColumnA className="footer-link" href="https://mail.google.com/mail/u/0/?fs=1&to=kmquirapas@gmail.com&tf=cm" target="_blank"><StyledColumnLinkText>kmquirapas@gmail.com</StyledColumnLinkText></StyledColumnA>
                 <StyledColumnA className="footer-link" href="https://linkedin.com/in/kristian-quirapas-348603213"><StyledColumnLinkText>LinkedIn Profile</StyledColumnLinkText></StyledColumnA>
                 <StyledColumnA className="footer-link" href="https://github.com/kquirapas"><StyledColumnLinkText>Github</StyledColumnLinkText></StyledColumnA>
                 <StyledColumnA className="footer-link" href="https://www.youtube.com/channel/UCaU88FuhkVKO0PJViRjvTLw"><StyledColumnLinkText>Youtube Channel</StyledColumnLinkText></StyledColumnA>
-                <StyledColumnA className="footer-link" href="https://twitter.com/k_quirapas"><StyledColumnLinkText>Twitter</StyledColumnLinkText></StyledColumnA>
               </StyledColumnBody>
             </StyledColumn>
             <StyledColumn>

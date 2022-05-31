@@ -29,7 +29,6 @@ export default function Home() {
             <StyledSocials>
               <a href="https://linkedin.com/in/kristian-quirapas-348603213"><img src="/assets/icons/linkedin.svg" alt="LinkedIn Icon" /></a>
               <a href="https://github.com/kquirapas"><img src="/assets/icons/github.svg" alt="Github Icon" /></a>
-              <a href="https://twitter.com/k_quirapas"><img src="/assets/icons/twitter.svg" alt="Twitter Icon" /></a>
               <a href="https://www.youtube.com/channel/UCaU88FuhkVKO0PJViRjvTLw"><img src="/assets/icons/youtube.svg" alt="Youtube Icon" /></a>
             </StyledSocials>
             <StyledGroup>
