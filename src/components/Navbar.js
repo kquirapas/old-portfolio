@@ -66,14 +66,14 @@ export default function Navbar({ page }) {
     <>
       <StyledMobileNav>
         <div>
-          <span id="logo" className="material-symbols-rounded font-green">network_intelligence</span>
+          <span id="logo" className="material-symbols-rounded font-green">psychology</span>
           <StyledMobileLink to="/" className="body-text font-white">Kristian Quirapas</StyledMobileLink>
         </div>
         <div id="mobile-nav-logo" onClick={toggleNav} className="nav-main-link font-white"><span id="logo" className="material-symbols-rounded font-green">menu</span></div>
       </StyledMobileNav>
       <StyledNav className="nav" ref={navbar}>
         <StyledLogoLink to="/">
-          <span id="logo" className="material-symbols-rounded font-green">network_intelligence</span>
+          <span id="logo" className="material-symbols-rounded font-green">psychology</span>
           <StyledSpan>
             <StyledBrand className="nav-logo">Kristian Quirapas</StyledBrand>
             <StyledSecondary className="secondary-text font-green">Blockchain Developer</StyledSecondary>
