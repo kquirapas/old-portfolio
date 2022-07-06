@@ -24,6 +24,7 @@ function MetaTags() {
   return (
     <Helmet>
       <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+
       <meta property="og:title" content="Kristian Quirapas | Portfolio" />
       <meta property="og:url" content="https://kquirapas.github.io" />
       <meta property="og:description" content="A blockchain engineer's passion for building and security." />

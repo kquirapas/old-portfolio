@@ -142,18 +142,14 @@ const StyledProjSection = styled.section`
   }
 
   aside > p {
-    text-align: justify;
     margin: 2vh 0;
     color: ${BROWN};
+    padding: 0;
+    margin: 5vh 0;
   }
 
   h2 {
     color: ${WHITE};
-  }
-
-  aside > p {
-    padding: 0;
-    margin: 5vh 0;
   }
 
   @media (max-width: 768px) {

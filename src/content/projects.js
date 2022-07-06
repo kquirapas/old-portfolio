@@ -2,6 +2,43 @@
 const projects = {};
 
 projects["0"] = {
+    name: "Solana Paper Wallet",
+
+    month: "July",
+    
+    day: "6",
+
+    year: "2022",
+    
+    network: "Web 3",
+
+    description: "Decoupling Solana from the Keypair Wallet with PDAs",
+
+    role: "Fullstack Solana Developer",
+
+    thumbnail: "/assets/projects/solana-paper-wallet/solana-paper-wallet.png",
+
+    content: `
+# Quick Links 
+
+**[Vercel Deployment](https://solana-paper-wallet.vercel.app/)**
+
+**[Youtube Video Demonstration](https://www.youtube.com/watch?v=Q_MpMqxS8U4&t=1s)**
+
+# Problems to Solve with Paper Wallet
+- Decouple Solana from Keypair Wallet
+- Have something tangible to keep
+- Provide the ability to give it to someone without asking them to make a wallet immediately.
+
+# How it Works
+
+![Graphic showing how it works](/assets/projects/solana-paper-wallet/how-it-works.png)
+
+
+`
+}
+
+projects["1"] = {
     name: "Personal Portfolio",
 
     month: "March",
@@ -135,7 +172,7 @@ It seems that mobile-first approach for frontend development would have made thi
 `
 }
 
-projects["1"] = {
+projects["2"] = {
     name: "Blockplace",
 
     month: "February",
@@ -558,7 +595,7 @@ I constructed both Greylist contracts and Place contracts with test-driven devel
 
 
 
-projects["2"] = {
+projects["3"] = {
     name: "Proximic",
 
     month: "February",

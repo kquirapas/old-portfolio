@@ -3,13 +3,13 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/kquirapas/portfolio
+cd ~/kquirapas/projects/kquirapas.github.io
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess=aoO
-badd +225 src/components/Projects.js
+badd +1 src/components/Projects.js
 badd +23 src/components/ProjContent.js
 badd +630 src/content/projects.js
 badd +1 src/content/test.md
@@ -50,8 +50,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 94 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 95 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 85 + 86) / 172)
+exe 'vert 2resize ' . ((&columns * 86 + 86) / 172)
 argglobal
 balt src/components/Home.js
 setlocal fdm=manual
@@ -64,7 +64,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 223 - ((21 * winheight(0) + 22) / 44)
+let s:l = 223 - ((20 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -87,7 +87,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 22) / 44)
+let s:l = 1 - ((0 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -95,8 +95,8 @@ keepjumps 1
 normal! 0
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 94 + 95) / 190)
-exe 'vert 2resize ' . ((&columns * 95 + 95) / 190)
+exe 'vert 1resize ' . ((&columns * 85 + 86) / 172)
+exe 'vert 2resize ' . ((&columns * 86 + 86) / 172)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

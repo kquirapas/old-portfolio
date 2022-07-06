@@ -142,17 +142,13 @@ const StyledProjSection = styled.section`
     margin: 0;
   }
 
-  aside > p {
-    text-align: justify;
-    margin: 2vh 0;
-    color: ${BROWN};
-  }
-
   h2 {
     color: ${WHITE};
   }
 
   aside > p {
+    margin: 2vh 0;
+    color: ${BROWN};
     padding: 0;
     margin: 5vh 0;
   }
