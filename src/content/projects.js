@@ -2,6 +2,43 @@
 const projects = {};
 
 projects["0"] = {
+    name: "Github | Solana Philippines",
+
+    month: "July",
+    
+    day: "16",
+
+    year: "2022",
+    
+    network: "Solana",
+
+    description: "Solana Philippines is the official Github organization for the Solana Philippines community.",
+
+    role: "Fullstack Solana Developer",
+
+    thumbnail: "/assets/projects/solana-philippines/thumbnail.png",
+
+    content: `# Quick Links
+
+**[Github Organization](https://github.com/solana-philippines)**
+
+[Github Page Deployment](https://solana-philippines.github.io/)
+
+# About 
+
+Solana Philippines is the official Github organization for the Solana Philippines community.
+
+# Vision
+
+A decentralized future where Filipinos are empowered to build and innovate on tools, decentralized applications, or scripts that will help everyone build with Solana.
+
+# Mission
+
+The mission is to open a space of respect and positive collaboration to facilitate the curious pursuit of knowledge in building with Solana. By empowering Filipinos with collaborative development experience we can nurture leading developers with the mindset of learning and problem-solving.
+`
+}
+
+projects["1"] = {
     name: "Solana Paper Wallet",
 
     month: "July",
@@ -38,7 +75,7 @@ projects["0"] = {
 `
 }
 
-projects["1"] = {
+projects["2"] = {
     name: "Personal Portfolio",
 
     month: "March",
@@ -172,7 +209,7 @@ It seems that mobile-first approach for frontend development would have made thi
 `
 }
 
-projects["2"] = {
+projects["3"] = {
     name: "Blockplace",
 
     month: "February",
@@ -595,7 +632,7 @@ I constructed both Greylist contracts and Place contracts with test-driven devel
 
 
 
-projects["3"] = {
+projects["4"] = {
     name: "Proximic",
 
     month: "February",

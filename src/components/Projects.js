@@ -30,7 +30,7 @@ export default function Projects() {
                 return (
                   <StyledProjSection key={i} >
                     <StyledMobileProject>
-                      <img src={currProj.thumbnail} />
+                      <img src={currProj.thumbnail} alt="Project Thumbnail"/>
                       <div className="gradient-div-top"></div>
                     </StyledMobileProject>
                     <aside>
