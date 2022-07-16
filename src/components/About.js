@@ -1,8 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
-import { projects, pIdx } from '../content/projects';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -28,7 +26,7 @@ export default function About() {
             </StyledMotto>
           </StyledHeader>
           <StyledSection>
-            <img id="img-left" src="/assets/github.jpg" alt="A Picture of Me" />
+            <img id="img-left" src="/assets/github.jpg" alt="Me" />
             <aside>
               <h1 className="section-header font-white">Hey, I'm K</h1>
               <h6 className="secondary-text font-green">Blockchain Developer</h6>
@@ -43,7 +41,7 @@ export default function About() {
               <h2 className="nav-main-link font-white">Founder and CEO</h2>
               <h6 className="secondary-text font-green">In the future (My life goal)</h6>
             </aside>
-            <img id="img-right" src="/assets/github.jpg" alt="A Picture of Me" />
+            <img id="img-right" src="/assets/github.jpg" alt="Me" />
           </StyledSection>
         </StyledBody>
       </StyledPage>

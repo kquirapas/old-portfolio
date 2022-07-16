@@ -1,17 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
-import Footer from './Footer';
-import DevStack from './DevStack';
-import Workflow from './Workflow';
-import ProjectPrev from './ProjectPrev';
-import { pIdx, projects } from '../content/projects';
-import { eIdx, experiments } from '../content/experiments';
-import { BLUE, BROWN, WHITE, GREEN } from '../colors';
+import { BLUE, BROWN } from '../colors';
 
-
-const NUM_PROJ_TO_SHOW = 2;
 
 export default function Home() {
   useEffect(() => {

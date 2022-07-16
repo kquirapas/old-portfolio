@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { projects, pIdx } from '../content/projects';
 import { experiments, eIdx } from '../content/experiments';
-import { BLUE, BROWN, WHITE, GREEN } from '../colors';
+import { WHITE, GREEN } from '../colors';
 
 const NUM_PROJ_TO_SHOW = Math.min(4, pIdx.length);
 const NUM_EXPE_TO_SHOW = Math.min(4, eIdx.length);
@@ -186,11 +186,6 @@ const StyledColumnLink = styled(Link)`
     color: ${GREEN};
   }
 `;
-
-const StyledDescription = styled.p`
-  
-`;
-
 
 const StyledLogo = styled.img`
   min-width: 400px;

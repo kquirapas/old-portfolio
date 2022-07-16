@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
-function App({ children }) {
+function LinkTree() {
   document.title = "Kristian Quirapas"
   document.body.style.margin = 0;
   return (
@@ -9,15 +9,15 @@ function App({ children }) {
       <H1 className="section-header">Kristian Quirapas</H1>
       <span className="secondary-text">Blockchain Developer</span>
       <P className="body-text">Hey, my name's K. I'm a software engineer who builds web-based blockchain applications</P>
+      <A href="https://github.com/kquirapas" target="_blank" className="nav-main-link">Github</A>
       <A href="https://linkedin.com/in/kristian-quirapas-348603213" target="_blank" className="nav-main-link">LinkedIn</A>
       <A href="https://twitter.com/k_quirapas" target="_blank" className="nav-main-link">Twitter</A>
-      <A href="https://www.youtube.com/channel/UCaU88FuhkVKO0PJViRjvTLw" target="_blank" className="nav-main-link">Youtube</A>
     </Main>
   );
 }
 
 const Main = styled.main`
-  background-color: #0B1741;
+  background-color: ${BLUE};
   color: white;
   box-sizing: border-box;
   padding: 10vw;
@@ -59,4 +59,4 @@ const A = styled.a`
 `;
 
 
-export default App;
+export default LinkTree;

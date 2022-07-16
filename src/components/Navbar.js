@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
@@ -239,13 +239,6 @@ const StyledLogoLink = styled(StyledLink)`
   &:visited {
     color: ${WHITE};
   }
-`;
-
-const StyledLogo = styled.div`
-  width: 60px;
-  height: 60px;
-  background-color: ${GREEN};
-  border-radius: 10px;
 `;
 
 const StyledNavLink = styled(StyledLink)`

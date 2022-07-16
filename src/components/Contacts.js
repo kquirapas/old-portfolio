@@ -1,12 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
-import { projects, pIdx } from '../content/projects';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-import { BLUE, BROWN, WHITE, GREEN } from '../colors';
+import { BLUE, BROWN, GREEN } from '../colors';
 
 function ContactPoint({ contact, href, description }) {
   return (

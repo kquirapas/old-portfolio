@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import App from './components/App';
 import LinkTree from './components/LinkTree';
 import Home from './components/Home';
 import About from './components/About';
@@ -15,7 +14,6 @@ import NotFound from './components/NotFound.js';
 import reportWebVitals from './reportWebVitals';
 import GoToTop from './components/GoToTop';
 
-import Navbar from './components/Navbar';
 import Fonts from './modules/fonts';
 
 ReactDOM.render(
@@ -31,6 +29,7 @@ ReactDOM.render(
         <Route exact path="/experiments/:idx" element={<ExpContent />}/>
         <Route exact path="/about" element={<About />}/>
         <Route exact path="/contacts" element={<Contacts />}/>
+        <Route exact path="/tree" element={<LinkTree />}/>
         <Route path="*" element={<NotFound />}/>
       </Routes>
     </BrowserRouter>

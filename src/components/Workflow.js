@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BLUE, BROWN, WHITE, GREEN } from '../colors';
+import { BROWN, GREEN } from '../colors';
 
 export default function Workflow() {
   return (
@@ -129,29 +129,4 @@ const StyledLogo = styled.span`
       transform: translateY(-10px) scale(1.1);
     }
   }
-`;
-
-const StyledNum = styled.span`
-  color: ${WHITE};
-  margin: 50px 0;
-  width: 100px;
-  height: 100px;
-  background-color: ${GREEN};
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const StyledIMG = styled.img`
-  margin: 50px 0;
-  width: 100px;
-  height: 100px;
-  background-color: ${GREEN};
-  border-radius: 20px;
-`;
-
-const StyledP = styled.p`
-  padding: 0 5vw;
-  text-align: center;
 `;

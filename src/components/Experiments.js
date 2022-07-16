@@ -1,11 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { experiments, eIdx} from '../content/experiments';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import ProjectPrev from './ProjectPrev';
 
 import { BLUE, BROWN, WHITE, GREEN } from '../colors';
 
@@ -31,7 +30,7 @@ export default function Experiments() {
                 return (
                   <StyledProjSection key={i} >
                     <StyledMobileProject>
-                      <img src={currProj.thumbnail} />
+                      <img src={currProj.thumbnail} alt="Project Thumbnail"/>
                       <div className="gradient-div-top"></div>
                     </StyledMobileProject>
                     <aside>
@@ -57,11 +56,11 @@ export default function Experiments() {
               return (
                 <StyledProjSection key={i} >
                   <StyledMobileProject>
-                    <img src={currProj.thumbnail} />
+                    <img src={currProj.thumbnail} alt="Project Thumbnail"/>
                     <div className="gradient-div-top"></div>
                   </StyledMobileProject>
                   <StyledProject>
-                    <img src={currProj.thumbnail} />
+                    <img src={currProj.thumbnail} alt="Project Thumbnail"/>
                     <div className="gradient-div-left"></div>
                   </StyledProject>
                   <aside>

@@ -1,5 +1,3 @@
-import Navbar from './Navbar';
-
 function App({ children }) {
   return (
     <>

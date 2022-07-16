@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { BLUE, BROWN, WHITE, GREEN } from '../colors';
+import { GREEN } from '../colors';
 
-export default function() {
+export default function DevStack() {
   return (
     <StyledSection>
       <StyledAside>
@@ -73,9 +73,4 @@ const StyledLogo = styled.span`
       height: 5vh;
     }
   }
-`;
-
-const StyledP = styled.p`
-  padding: 0 5vw;
-  text-align: center;
 `;
