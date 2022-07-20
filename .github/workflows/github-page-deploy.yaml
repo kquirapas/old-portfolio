@@ -17,7 +17,7 @@ jobs:
 
       - name: Add CNAME to build folder
         run: |
-          echo "kristianquirapas.com" > build/CNAME 
+          echo "www.kristianquirapas.com" > build/CNAME 
         shell: bash
 
       - name: Deploy
