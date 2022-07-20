@@ -16,7 +16,7 @@ jobs:
         uses: ./.github/actions/build
 
       - name: Add CNAME to build folder
-        runs: |
+        run: |
           echo "kristianquirapas.com" > build/CNAME 
         shell: bash
 
