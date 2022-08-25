@@ -2,6 +2,80 @@
 const projects = {};
 
 projects["0"] = {
+    name: "NFT Client Projects",
+
+    month: "January",
+    
+    day: "1",
+
+    year: "2022",
+    
+    network: "Ethereum and Solana",
+
+    description: "(Doxxed) NFT projects I work/ed with as a developer.",
+
+    role: "Fullstack Web 2 and Blockchain Developer",
+
+    thumbnail: "/assets/projects/nft-client-projects/nft_projects.jpg",
+
+    content: `
+# Quick Links 
+
+### Ethereum
+
+**[Cash Cows](https://www.wearecashcows.com/)**
+
+**[The 14th Century Kids](https://the14thpalace.xyz/)**
+
+### Solana
+
+**[Nood Fungible Tokens](https://noodft.com)**
+
+**[Kultura (WIP)](https://kulturanft.com)**
+
+**[Jew Bears (WIP)](https://twitter.com/TheJewOkayBears?fbclid=IwAR33ieCUP791LxOIgIBuncAzZWFEiPuCK8bWLUvi9i5v2kDp0OBNHf3KpdE)**
+
+`
+}
+
+projects["1"] = {
+    name: "Solana Paper Wallet",
+
+    month: "July",
+    
+    day: "6",
+
+    year: "2022",
+    
+    network: "Solana",
+
+    description: "Decoupling Solana from the Keypair Wallet with PDAs",
+
+    role: "Fullstack Solana Developer",
+
+    thumbnail: "/assets/projects/solana-paper-wallet/solana-paper-wallet.png",
+
+    content: `
+# Quick Links 
+
+**[Vercel Deployment](https://solana-paper-wallet.vercel.app/)**
+
+**[Youtube Video Demonstration](https://www.youtube.com/watch?v=Q_MpMqxS8U4&t=1s)**
+
+# Problems to Solve with Paper Wallet
+- Decouple Solana from Keypair Wallet
+- Have something tangible to keep
+- Provide the ability to give it to someone without asking them to make a wallet immediately.
+
+# How it Works
+
+![Graphic showing how it works](/assets/projects/solana-paper-wallet/how-it-works.png)
+
+
+`
+}
+
+projects["2"] = {
     name: "Github | Solana Philippines",
 
     month: "July",
@@ -38,44 +112,8 @@ The mission is to open a space of respect and positive collaboration to facilita
 `
 }
 
-projects["1"] = {
-    name: "Solana Paper Wallet",
 
-    month: "July",
-    
-    day: "6",
-
-    year: "2022",
-    
-    network: "Web 3",
-
-    description: "Decoupling Solana from the Keypair Wallet with PDAs",
-
-    role: "Fullstack Solana Developer",
-
-    thumbnail: "/assets/projects/solana-paper-wallet/solana-paper-wallet.png",
-
-    content: `
-# Quick Links 
-
-**[Vercel Deployment](https://solana-paper-wallet.vercel.app/)**
-
-**[Youtube Video Demonstration](https://www.youtube.com/watch?v=Q_MpMqxS8U4&t=1s)**
-
-# Problems to Solve with Paper Wallet
-- Decouple Solana from Keypair Wallet
-- Have something tangible to keep
-- Provide the ability to give it to someone without asking them to make a wallet immediately.
-
-# How it Works
-
-![Graphic showing how it works](/assets/projects/solana-paper-wallet/how-it-works.png)
-
-
-`
-}
-
-projects["2"] = {
+projects["3"] = {
     name: "Personal Portfolio",
 
     month: "March",
@@ -209,7 +247,7 @@ It seems that mobile-first approach for frontend development would have made thi
 `
 }
 
-projects["3"] = {
+projects["4"] = {
     name: "Blockplace",
 
     month: "February",
@@ -632,7 +670,7 @@ I constructed both Greylist contracts and Place contracts with test-driven devel
 
 
 
-projects["4"] = {
+projects["5"] = {
     name: "Proximic",
 
     month: "February",

@@ -8,11 +8,13 @@ export default function DevStack() {
         <span className="section-header font-green">Modern Web 3 Stack</span>
         <span className="secondary-text font-brown">Perfect for leading the industry</span>
         <StyledLogo>
-          <img src="/assets/icons/html.svg" alt="HTML Logo" />
-          <img src="/assets/icons/css.svg" alt="CSS Logo" />
+          <img src="/assets/icons/typescript.svg" alt="Typescript Logo" />
           <img src="/assets/icons/javascript.svg" alt="Javascript Logo" />
           <img src="/assets/icons/reactjs.svg" alt="ReactJS Logo" />
           <img src="/assets/icons/nextjs.svg" alt="NextJS Logo" />
+          <img src="/assets/icons/solana.svg" alt="Solana Logo" />
+          <img src="/assets/icons/rust.svg" alt="Rust Logo" />
+          <img src="/assets/icons/anchor.png" alt="Anchor Logo" />
           <img src="/assets/icons/metamask.svg" alt="MetaMask Logo" />
           <img src="/assets/icons/ethereum.svg" alt="Ethereum Logo" />
           <img src="/assets/icons/solidity.svg" alt="Solidity Logo" />

@@ -24,6 +24,7 @@ export default function Workflow() {
               <img src="/assets/icons/terminal.svg" alt="Terminal Logo" />
               <img src="/assets/icons/npm.svg" alt="npm Logo" />
               <img src="/assets/icons/yarn.svg" alt="yarn Logo" />
+              <img src="/assets/icons/anchor.png" alt="Anchor Logo" />
               <img src="/assets/icons/metamask.svg" alt="MetaMask Logo" />
               <img src="/assets/icons/ethereum.svg" alt="Ethereum Logo" />
               <img src="/assets/icons/polygon.svg" alt="Polygon Logo" />
@@ -32,12 +33,12 @@ export default function Workflow() {
           </StyledAside><StyledAside>
             <span className="nav-main-link font-white">Coding</span>
             <StyledLogo>
-              <img src="/assets/icons/html.svg" alt="HTML Logo" />
-              <img src="/assets/icons/css.svg" alt="CSS Logo" />
+              <img src="/assets/icons/typescript.svg" alt="Typescript Logo" />
               <img src="/assets/icons/javascript.svg" alt="Javascript Logo" />
-              <img src="/assets/icons/solidity.svg" alt="Solidity Logo" />
               <img src="/assets/icons/reactjs.svg" alt="ReactJS Logo" />
               <img src="/assets/icons/nextjs.svg" alt="NextJS Logo" />
+              <img src="/assets/icons/rust.svg" alt="Rust Logo" />
+              <img src="/assets/icons/solidity.svg" alt="Solidity Logo" />
               <img src="/assets/icons/vim.svg" alt="Vim Logo" />
               <img src="/assets/icons/git.svg" alt="git Logo" />
             </StyledLogo>
