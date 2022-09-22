@@ -35,8 +35,11 @@ export default function About() {
               <h2 className="nav-main-link font-white">Computer Science, UP Diliman</h2>
               <h6 className="secondary-text font-green">2018 - 2023</h6>
 
-              <h2 className="nav-main-link font-white">Freelance Developer</h2>
-              <h6 className="secondary-text font-green">2015 - Present</h6>
+              <h2 className="nav-main-link font-white">Freelance Fullstack Developer</h2>
+              <h6 className="secondary-text font-green">2015 - 2021</h6>
+
+              <h2 className="nav-main-link font-white">Fullstack Blockchain Developer</h2>
+              <h6 className="secondary-text font-green">2021 - Present</h6>
 
               <h2 className="nav-main-link font-white">Founder and CEO</h2>
               <h6 className="secondary-text font-green">In the future (My life goal)</h6>
