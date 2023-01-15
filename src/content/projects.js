@@ -23,6 +23,8 @@ projects["0"] = {
 
 ### Ethereum
 
+**[Voyaji](https://www.voyaji.io/)**
+
 **[Cash Cows](https://www.wearecashcows.com/)**
 
 **[The 14th Century Kids](https://the14thpalace.xyz/)**
@@ -31,7 +33,7 @@ projects["0"] = {
 
 **[Nood Fungible Tokens](https://noodft.com)**
 
-**[Kultura (WIP)](https://kulturanft.com)**
+**[Kultura](https://kulturanft.com)**
 
 **[Jew Bears (WIP)](https://twitter.com/TheJewOkayBears?fbclid=IwAR33ieCUP791LxOIgIBuncAzZWFEiPuCK8bWLUvi9i5v2kDp0OBNHf3KpdE)**
 
